@@ -2,8 +2,10 @@ require "faraday"
 require "faraday_middleware"
 
 module Todoable
+  BASE_API_URL = ENV.fetch("BASE_API_URL", "http://todoable.teachable.tech/")
+
   class Client
-    def initialize(username:, password:)
+    def initialize(username:, password:, http_client: Faraday)
       @conn = build_connection
       @username = username
       @password = password
@@ -39,7 +41,7 @@ module Todoable
     end
 
     def build_connection
-      Faraday.new(url: "http://todoable.teachable.tech/") do |conn|
+      Faraday.new(url: BASE_API_URL) do |conn|
         conn.request :json
         conn.response :json
         conn.adapter Faraday.default_adapter
