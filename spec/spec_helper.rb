@@ -1,5 +1,6 @@
 require "bundler/setup"
 require "todoable"
+require "vcr_helper"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
