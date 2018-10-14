@@ -5,7 +5,7 @@ RSpec.describe Todoable, :vcr do
     described_class.authenticate!(username: ENV["API_USERNAME"], password: ENV["API_PASSWORD"])
   end
 
-  describe ".list" do
+  describe ".lists" do
     context "when several lists exists" do
       before { create_todos }
 
