@@ -3,6 +3,13 @@ require "faraday_middleware"
 
 module Todoable
   BASE_API_URL = ENV.fetch("BASE_API_URL", "http://todoable.teachable.tech/")
+  # HTTP Codes
+  HTTP_OK_CODE = 200
+  HTTP_UNPROCESSABLE_ENTITY_CODE = 422
+
+  # Errors
+  class UnprocessableEntityError < StandardError; end
+
 
   class Client
     def initialize(username:, password:, http_client: Faraday)
@@ -10,18 +17,44 @@ module Todoable
     end
 
     def lists
-      http_adapter.get("/api/lists", {}, build_request_headers).body['lists'].map do |list|
-        {name: list['name']}
+      parsed_response = make_request(
+        http_method: :get,
+        url: "/api/lists",
+        params: {},
+      )
+      parsed_response["lists"].map do |list|
+        {name: list["name"]}
       end
     end
 
     def create_list!(name:)
-      http_adapter.post "/api/lists", build_create_list_request(name), build_request_headers
+      make_request(
+        http_method: :post,
+        url: "/api/lists",
+        params: build_create_list_request(name)
+      )
     end
 
     private
 
-    attr_reader :http_adapter
+    attr_reader :http_adapter, :response
+
+    def make_request(http_method:, url:, params:)
+      @response = http_adapter.public_send(http_method, url, params, build_request_headers)
+      return response.body if successful_response?
+      raise error_class.new("Code: #{response.status}, response: #{response.body}")
+    end
+
+    def successful_response?
+      response.status == HTTP_OK_CODE
+    end
+
+    def error_class
+      case response.status
+      when HTTP_UNPROCESSABLE_ENTITY_CODE
+        UnprocessableEntityError
+      end
+    end
 
     def build_create_list_request(name)
       { "list" => {"name" => name} }
