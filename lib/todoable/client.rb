@@ -11,7 +11,7 @@ module Todoable
       @password = password
     end
 
-    def all
+    def lists
       retrieve_token
       conn.get("/api/lists", {}, build_request_headers).body['lists'].map do |todo|
         {name: todo['name']}

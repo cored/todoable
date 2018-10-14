@@ -11,7 +11,7 @@ RSpec.describe Todoable, :vcr do
 
       it "return a list of todos" do
         expect(
-          todoable.all
+          todoable.lists
         ).to match_array([
           {name: "Todo 1"},
           {name: "Todo 2"},
