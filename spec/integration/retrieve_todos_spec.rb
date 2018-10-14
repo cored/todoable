@@ -7,7 +7,7 @@ RSpec.describe Todoable, :vcr do
 
   describe ".lists" do
     context "when several lists exists" do
-      before { create_todos }
+      before { create_lists }
 
       it "return a collection of lists" do
         expect(
@@ -23,12 +23,18 @@ RSpec.describe Todoable, :vcr do
     end
 
     context "when no lists exist" do
+      before { delete_lists }
+
       it "return an empty collection of lists " do
       end
     end
   end
 end
 
-def create_todos
-  1.upto(5) { |number| todoable.create(name: "Todo #{number}") }
+def create_lists
+  1.upto(5) { |number| todoable.create_list!(name: "Todo #{number}") }
+end
+
+def delete_lists
+  todoable.lists.map(&:delete!)
 end

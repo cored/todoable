@@ -6,26 +6,25 @@ module Todoable
 
   class Client
     def initialize(username:, password:, http_client: Faraday)
-      @conn = build_connection
+      @http_client = http_client
       @username = username
       @password = password
+      @conn = build_connection_and_authenticate
     end
 
     def lists
-      retrieve_token
-      conn.get("/api/lists", {}, build_request_headers).body['lists'].map do |todo|
-        {name: todo['name']}
+      conn.get("/api/lists", {}, build_request_headers).body['lists'].map do |list|
+        {name: list['name']}
       end
     end
 
-    def create(name:)
-      retrieve_token
+    def create_list!(name:)
       conn.post "/api/lists", build_create_list_request(name), build_request_headers
     end
 
     private
 
-    attr_reader :conn, :token
+    attr_reader :conn, :http_client, :username, :password
 
     def build_create_list_request(name)
       { "list" => {"name" => name} }
@@ -35,19 +34,18 @@ module Todoable
       {"Authorization" => "Token token=\"#{token}\""}
     end
 
-    def retrieve_token
-      conn.basic_auth username, password
-      @token = conn.post("/api/authenticate").body['token']
+    def token
+      @_token = conn.post("/api/authenticate").body['token']
     end
 
-    def build_connection
-      Faraday.new(url: BASE_API_URL) do |conn|
+    def build_connection_and_authenticate
+      conn = http_client.new(url: BASE_API_URL) do |conn|
         conn.request :json
         conn.response :json
-        conn.adapter Faraday.default_adapter
+        conn.adapter http_client.default_adapter
       end
+      conn.basic_auth username, password
+      conn
     end
-
-    attr_reader :conn, :username, :password, :http_client
   end
 end
