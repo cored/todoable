@@ -23,7 +23,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 12 Oct 2018 00:31:58 GMT
+      - Sun, 14 Oct 2018 17:33:09 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -38,9 +38,9 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"token":"d0360c6b-50e1-4611-9e63-6f8a533d3d58","expires_at":"2018-10-12T00:51:58.665Z"}'
+      string: '{"token":"31233c2c-44e5-4915-b777-faf8230fccf0","expires_at":"2018-10-14T17:53:09.746Z"}'
     http_version: 
-  recorded_at: Fri, 12 Oct 2018 00:31:58 GMT
+  recorded_at: Sun, 14 Oct 2018 17:33:12 GMT
 - request:
     method: post
     uri: http://todoable.teachable.tech/api/lists
@@ -51,7 +51,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.15.3
       Authorization:
-      - Token token="d0360c6b-50e1-4611-9e63-6f8a533d3d58"
+      - Token token="31233c2c-44e5-4915-b777-faf8230fccf0"
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -64,7 +64,7 @@ http_interactions:
       message: Unprocessable Entity
     headers:
       Date:
-      - Fri, 12 Oct 2018 00:31:57 GMT
+      - Sun, 14 Oct 2018 17:33:09 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -81,7 +81,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"name":["has already been taken"]}'
     http_version: 
-  recorded_at: Fri, 12 Oct 2018 00:31:58 GMT
+  recorded_at: Sun, 14 Oct 2018 17:33:12 GMT
 - request:
     method: post
     uri: http://todoable.teachable.tech/api/authenticate
@@ -105,7 +105,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 12 Oct 2018 00:31:58 GMT
+      - Sun, 14 Oct 2018 17:33:10 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -120,9 +120,9 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"token":"e4b4f110-b854-4798-8c7d-8accfa705e75","expires_at":"2018-10-12T00:51:58.989Z"}'
+      string: '{"token":"d07e6e54-80d0-4b70-be7a-f8c2d3a6d932","expires_at":"2018-10-14T17:53:10.272Z"}'
     http_version: 
-  recorded_at: Fri, 12 Oct 2018 00:31:58 GMT
+  recorded_at: Sun, 14 Oct 2018 17:33:12 GMT
 - request:
     method: post
     uri: http://todoable.teachable.tech/api/lists
@@ -133,7 +133,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.15.3
       Authorization:
-      - Token token="e4b4f110-b854-4798-8c7d-8accfa705e75"
+      - Token token="d07e6e54-80d0-4b70-be7a-f8c2d3a6d932"
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -146,7 +146,7 @@ http_interactions:
       message: Unprocessable Entity
     headers:
       Date:
-      - Fri, 12 Oct 2018 00:31:58 GMT
+      - Sun, 14 Oct 2018 17:33:10 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -163,7 +163,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"name":["has already been taken"]}'
     http_version: 
-  recorded_at: Fri, 12 Oct 2018 00:31:58 GMT
+  recorded_at: Sun, 14 Oct 2018 17:33:12 GMT
 - request:
     method: post
     uri: http://todoable.teachable.tech/api/authenticate
@@ -187,7 +187,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 12 Oct 2018 00:31:58 GMT
+      - Sun, 14 Oct 2018 17:33:10 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -202,9 +202,9 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"token":"64890fdd-4a32-42be-8505-180f2f3b92de","expires_at":"2018-10-12T00:51:59.281Z"}'
+      string: '{"token":"04d7b2b9-d08b-4e35-a247-da1589da0a08","expires_at":"2018-10-14T17:53:10.550Z"}'
     http_version: 
-  recorded_at: Fri, 12 Oct 2018 00:31:59 GMT
+  recorded_at: Sun, 14 Oct 2018 17:33:12 GMT
 - request:
     method: post
     uri: http://todoable.teachable.tech/api/lists
@@ -215,7 +215,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.15.3
       Authorization:
-      - Token token="64890fdd-4a32-42be-8505-180f2f3b92de"
+      - Token token="04d7b2b9-d08b-4e35-a247-da1589da0a08"
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -228,7 +228,7 @@ http_interactions:
       message: Unprocessable Entity
     headers:
       Date:
-      - Fri, 12 Oct 2018 00:31:58 GMT
+      - Sun, 14 Oct 2018 17:33:10 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -245,7 +245,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"name":["has already been taken"]}'
     http_version: 
-  recorded_at: Fri, 12 Oct 2018 00:31:59 GMT
+  recorded_at: Sun, 14 Oct 2018 17:33:13 GMT
 - request:
     method: post
     uri: http://todoable.teachable.tech/api/authenticate
@@ -269,7 +269,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 12 Oct 2018 00:31:58 GMT
+      - Sun, 14 Oct 2018 17:33:10 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -284,9 +284,9 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"token":"6d177be9-2f6a-42ee-83af-c2c6468714ed","expires_at":"2018-10-12T00:51:59.624Z"}'
+      string: '{"token":"04438755-596e-4cd9-bd30-699dc9e9f9a2","expires_at":"2018-10-14T17:53:10.801Z"}'
     http_version: 
-  recorded_at: Fri, 12 Oct 2018 00:31:59 GMT
+  recorded_at: Sun, 14 Oct 2018 17:33:13 GMT
 - request:
     method: post
     uri: http://todoable.teachable.tech/api/lists
@@ -297,7 +297,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.15.3
       Authorization:
-      - Token token="6d177be9-2f6a-42ee-83af-c2c6468714ed"
+      - Token token="04438755-596e-4cd9-bd30-699dc9e9f9a2"
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -310,7 +310,7 @@ http_interactions:
       message: Unprocessable Entity
     headers:
       Date:
-      - Fri, 12 Oct 2018 00:31:59 GMT
+      - Sun, 14 Oct 2018 17:33:10 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -327,7 +327,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"name":["has already been taken"]}'
     http_version: 
-  recorded_at: Fri, 12 Oct 2018 00:31:59 GMT
+  recorded_at: Sun, 14 Oct 2018 17:33:13 GMT
 - request:
     method: post
     uri: http://todoable.teachable.tech/api/authenticate
@@ -351,7 +351,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 12 Oct 2018 00:31:59 GMT
+      - Sun, 14 Oct 2018 17:33:11 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -366,9 +366,9 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"token":"f3e0dc3b-a0be-400d-9a5c-5c959ecbdf0f","expires_at":"2018-10-12T00:51:59.943Z"}'
+      string: '{"token":"f2a393dd-25c6-4d4d-b1d0-60976f80c42a","expires_at":"2018-10-14T17:53:11.219Z"}'
     http_version: 
-  recorded_at: Fri, 12 Oct 2018 00:31:59 GMT
+  recorded_at: Sun, 14 Oct 2018 17:33:13 GMT
 - request:
     method: post
     uri: http://todoable.teachable.tech/api/lists
@@ -379,7 +379,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.15.3
       Authorization:
-      - Token token="f3e0dc3b-a0be-400d-9a5c-5c959ecbdf0f"
+      - Token token="f2a393dd-25c6-4d4d-b1d0-60976f80c42a"
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -392,7 +392,7 @@ http_interactions:
       message: Unprocessable Entity
     headers:
       Date:
-      - Fri, 12 Oct 2018 00:31:59 GMT
+      - Sun, 14 Oct 2018 17:33:11 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -409,7 +409,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"name":["has already been taken"]}'
     http_version: 
-  recorded_at: Fri, 12 Oct 2018 00:31:59 GMT
+  recorded_at: Sun, 14 Oct 2018 17:33:13 GMT
 - request:
     method: post
     uri: http://todoable.teachable.tech/api/authenticate
@@ -433,7 +433,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 12 Oct 2018 00:31:59 GMT
+      - Sun, 14 Oct 2018 17:33:10 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -448,9 +448,9 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"token":"3fbff3c2-e9f0-4fd6-9e6b-6a78629c8f89","expires_at":"2018-10-12T00:52:00.219Z"}'
+      string: '{"token":"8bb4d340-a34e-4dd1-9c93-ebaf2d941d3d","expires_at":"2018-10-14T17:53:11.635Z"}'
     http_version: 
-  recorded_at: Fri, 12 Oct 2018 00:32:00 GMT
+  recorded_at: Sun, 14 Oct 2018 17:33:14 GMT
 - request:
     method: get
     uri: http://todoable.teachable.tech/api/lists
@@ -461,7 +461,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.15.3
       Authorization:
-      - Token token="3fbff3c2-e9f0-4fd6-9e6b-6a78629c8f89"
+      - Token token="8bb4d340-a34e-4dd1-9c93-ebaf2d941d3d"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -472,7 +472,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 12 Oct 2018 00:31:59 GMT
+      - Sun, 14 Oct 2018 17:33:11 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -493,5 +493,5 @@ http_interactions:
         3","src":"http://todoable.teachable.tech/api/lists/58878311-d1cc-404e-9144-170252508b3c","id":"58878311-d1cc-404e-9144-170252508b3c"},{"name":"Todo
         4","src":"http://todoable.teachable.tech/api/lists/e783b8c8-cba7-4bb5-ae86-e8ecf5bb797d","id":"e783b8c8-cba7-4bb5-ae86-e8ecf5bb797d"}]}'
     http_version: 
-  recorded_at: Fri, 12 Oct 2018 00:32:00 GMT
+  recorded_at: Sun, 14 Oct 2018 17:33:14 GMT
 recorded_with: VCR 4.0.0

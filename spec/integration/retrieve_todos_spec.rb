@@ -5,11 +5,11 @@ RSpec.describe Todoable, :vcr do
     described_class.authenticate!(username: ENV["API_USERNAME"], password: ENV["API_PASSWORD"])
   end
 
-  describe ".all" do
-    context "when todo's exist" do
+  describe ".list" do
+    context "when several lists exists" do
       before { create_todos }
 
-      it "return a list of todos" do
+      it "return a collection of lists" do
         expect(
           todoable.lists
         ).to match_array([
@@ -22,7 +22,9 @@ RSpec.describe Todoable, :vcr do
       end
     end
 
-    context "when todo's does not exist" do
+    context "when no lists exist" do
+      it "return an empty collection of lists " do
+      end
     end
   end
 end
