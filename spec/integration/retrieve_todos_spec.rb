@@ -21,20 +21,13 @@ RSpec.describe Todoable, :vcr do
         ])
       end
     end
-
-    context "when no lists exist" do
-      before { delete_lists }
-
-      it "return an empty collection of lists " do
-      end
-    end
   end
 end
 
 def create_lists
-  1.upto(5) { |number| todoable.create_list!(name: "Todo #{number}") }
+  1.upto(5) { |number| create_list("Todo #{number}") }
 end
 
-def delete_lists
-  todoable.lists.map(&:delete!)
+def create_list(name)
+  todoable.create_list!(name: name)
 end
