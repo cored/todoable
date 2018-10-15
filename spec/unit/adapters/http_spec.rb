@@ -12,13 +12,10 @@ RSpec.describe Todoable::Adapters::HTTP, :vcr do
         expect {
           http_adapter.with_credentials(username: username, password: password)
         }.to raise_error(
-          described_class::InvalidCredentials,
+          described_class::InvalidCredentialsError,
           /Please verify your username or password/
         )
       end
-    end
-
-    context "when passing valid credentials" do
     end
   end
 end

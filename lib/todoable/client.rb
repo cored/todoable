@@ -12,12 +12,13 @@ module Todoable
     end
 
     def create_list!(name:)
-      http_adapter.post(url: "/api/lists", params: build_create_list_request(name))
+      http_adapter.post(url: "/api/lists",
+                        params: build_create_list_request(name))
     end
 
     private
 
-    attr_reader :http_adapter, :response
+    attr_reader :http_adapter
 
     def build_create_list_request(name)
       { "list" => {"name" => name} }

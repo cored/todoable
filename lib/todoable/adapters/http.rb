@@ -1,10 +1,12 @@
 module Todoable
   module Adapters
     class HTTP
-      class InvalidCredentials < StandardError; end
+      class InvalidCredentialsError < StandardError; end
+      class UnprocessableEntityError < StandardError; end
 
       HTTP_OK_CODE = 200
       HTTP_UNAUTHORIZED_CODE = 401
+      HTTP_UNPROCCESSABLE_ENTITY_CODE = 422
 
       def self.with_credentials(username:, password:, http_client: Faraday)
         conn = http_client.new(url: BASE_API_URL) do |faraday|
@@ -18,32 +20,49 @@ module Todoable
 
       def initialize(connection:)
         @connection = connection
-        @token = retrieve_token
+        retrieve_token
       end
 
       def post(url:, params:)
-        connection.post(url, params, headers)
+        request(
+          http_method: :post,
+          url: url,
+          params: params,
+        )
       end
 
       def get(url:)
-        connection.get(url, {}, headers).body
+        request(
+          http_method: :get,
+          url: url,
+          params: {},
+        )
       end
 
       private
 
       attr_reader :connection, :token
 
-      def headers
-        connection.authorization :Token, token: token
+      def retrieve_token
+        @token = Resources::Token.new(
+          request(http_method: :post, url: Resources::Token.resource_url)
+        )
+        build_authorization_headers if token.valid?
       end
 
-      def retrieve_token
-        response = connection.post("/api/authenticate")
-        return response.body["token"] if response.status == HTTP_OK_CODE
+      def build_authorization_headers
+        connection.authorization(:Token, token: token)
+      end
+
+      def request(http_method:, url:, params: {})
+        response = connection.public_send(http_method, url, params)
+        return response.body if response.status == HTTP_OK_CODE
 
         case response.status
         when HTTP_UNAUTHORIZED_CODE
-          raise InvalidCredentials.new("Please verify your username or password")
+          raise InvalidCredentialsError.new("Please verify your username or password")
+        when HTTP_UNPROCCESSABLE_ENTITY_CODE
+          UnprocessableEntityError.new("Unprocessable entity: #{response.body}")
         end
       end
     end
