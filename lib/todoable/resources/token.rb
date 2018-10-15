@@ -27,7 +27,7 @@ module Todoable
       private
 
       def has_twenty_minutes_passed?
-        ((expires_at.to_time - Time.now).to_i.abs / 60) == 20
+        ((expires_at.to_time.to_i - Time.now.to_i).abs / 60) == 20
       end
     end
   end
