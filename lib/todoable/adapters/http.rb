@@ -44,7 +44,7 @@ module Todoable
       attr_reader :connection, :token
 
       def retrieve_token
-        @token = Resources::Token.new(
+        @token = Resources::Token.for(
           request(http_method: :post, url: Resources::Token.resource_url)
         )
         build_authorization_headers if token.valid?

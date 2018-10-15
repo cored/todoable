@@ -25,11 +25,6 @@ RSpec.describe Todoable, :vcr do
 
   describe ".create_list!" do
     context "when passing a blank name for a new list" do
-      it "throws an unproccesable entity error" do
-        # expect {
-        #   todoable.create_list!(name: "")
-        # }.to raise_error(described_class::UnprocessableEntityError)
-      end
     end
   end
 end

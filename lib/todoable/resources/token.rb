@@ -7,6 +7,12 @@ module Todoable
         "/api/authenticate"
       end
 
+      def self.for(attrs)
+        new(
+          attrs.merge("expires_at" => DateTime.parse(attrs["expires_at"]))
+        )
+      end
+
       attribute :token, Types::String.default("")
       attribute :expires_at, Types::Strict::DateTime
 
