@@ -15,7 +15,7 @@ RSpec.describe Todoable::Client do
       let(:get_response) { { "lists" => [] } }
 
       it "returns an empty collection" do
-        expect(todoable_client.lists).to be_empty
+        expect(todoable_client.lists).to eql(Todoable::Resources::Lists.new(lists: []))
       end
     end
 
