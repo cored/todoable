@@ -15,19 +15,20 @@ module Todoable
 
       def self.for(lists_attrs)
         new(
-          lists: lists_attrs["lists"].map do |list|
+          lists: Array(lists_attrs["lists"]).map do |list|
             List.new(list)
           end
         )
       end
 
-      attribute :lists, Types::Array.of(List)
+      attribute :lists, Types::Array.of(List).meta(omittable: true)
 
+      NoList = Struct.new(:name, :id, :src)
       def find_by(attrs)
         lists.find do |list|
           list.to_h.has_key?(*attrs.keys) &&
             list.to_h.has_value?(*attrs.values)
-        end
+        end || NoList.new
       end
 
       def to_a
