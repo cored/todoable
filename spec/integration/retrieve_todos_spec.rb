@@ -11,7 +11,7 @@ RSpec.describe Todoable, :vcr do
 
       it "return a collection of lists" do
         expect(
-          todoable.lists.map(&:to_h)
+          todoable.lists.to_a.map(&:to_h)
         ).to include(
           a_hash_including({name: "List 1"}),
           a_hash_including({name: "List 2"}),

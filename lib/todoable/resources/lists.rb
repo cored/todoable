@@ -4,8 +4,8 @@ module Todoable
       transform_keys(&:to_sym)
 
       attribute :name, Types::String
-      attribute :id, Types::String
-      attribute :src, Types::String
+      attribute :id, Types::String.meta(omittable: true)
+      attribute :src, Types::String.meta(omittable: true)
     end
 
     class Lists < Dry::Struct
@@ -22,6 +22,13 @@ module Todoable
       end
 
       attribute :lists, Types::Array.of(List)
+
+      def find_by(attrs)
+        lists.find do |list|
+          list.to_h.has_key?(*attrs.keys) &&
+            list.to_h.has_value?(*attrs.values)
+        end
+      end
 
       def to_a
         lists

@@ -23,7 +23,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 16 Oct 2018 12:13:55 GMT
+      - Tue, 16 Oct 2018 13:15:07 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -38,225 +38,22 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"token":"a1e652a7-4969-4576-947e-2b8b5ad33325","expires_at":"2018-10-16T12:33:56.684Z"}'
+      string: '{"token":"1458316c-64d6-45c9-a7c5-dbd15360e1e9","expires_at":"2018-10-16T13:35:08.019Z"}'
     http_version: 
-  recorded_at: Tue, 16 Oct 2018 12:13:57 GMT
+  recorded_at: Tue, 16 Oct 2018 13:15:08 GMT
 - request:
     method: post
-    uri: http://todoable.teachable.tech/api/lists
+    uri: http://todoable.teachable.tech/api/authenticate
     body:
       encoding: UTF-8
-      string: '{"list":{"name":"List 1"}}'
+      string: "{}"
     headers:
       User-Agent:
       - Faraday v0.15.3
       Authorization:
-      - Token token="a1e652a7-4969-4576-947e-2b8b5ad33325"
+      - Basic Z2VvcmdlLnJhZmFlbEBnbWFpbC5jb206dG9kb2FibGU=
       Content-Type:
       - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 422
-      message: Unprocessable Entity
-    headers:
-      Date:
-      - Tue, 16 Oct 2018 12:13:56 GMT
-      Connection:
-      - keep-alive
-      Content-Type:
-      - application/json;charset=utf-8
-      Content-Length:
-      - '35'
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - thin
-      Via:
-      - 1.1 vegur
-    body:
-      encoding: UTF-8
-      string: '{"name":["has already been taken"]}'
-    http_version: 
-  recorded_at: Tue, 16 Oct 2018 12:13:57 GMT
-- request:
-    method: post
-    uri: http://todoable.teachable.tech/api/lists
-    body:
-      encoding: UTF-8
-      string: '{"list":{"name":"List 2"}}'
-    headers:
-      User-Agent:
-      - Faraday v0.15.3
-      Authorization:
-      - Token token="a1e652a7-4969-4576-947e-2b8b5ad33325"
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 422
-      message: Unprocessable Entity
-    headers:
-      Date:
-      - Tue, 16 Oct 2018 12:13:56 GMT
-      Connection:
-      - keep-alive
-      Content-Type:
-      - application/json;charset=utf-8
-      Content-Length:
-      - '35'
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - thin
-      Via:
-      - 1.1 vegur
-    body:
-      encoding: UTF-8
-      string: '{"name":["has already been taken"]}'
-    http_version: 
-  recorded_at: Tue, 16 Oct 2018 12:13:57 GMT
-- request:
-    method: post
-    uri: http://todoable.teachable.tech/api/lists
-    body:
-      encoding: UTF-8
-      string: '{"list":{"name":"List 3"}}'
-    headers:
-      User-Agent:
-      - Faraday v0.15.3
-      Authorization:
-      - Token token="a1e652a7-4969-4576-947e-2b8b5ad33325"
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 422
-      message: Unprocessable Entity
-    headers:
-      Date:
-      - Tue, 16 Oct 2018 12:13:56 GMT
-      Connection:
-      - keep-alive
-      Content-Type:
-      - application/json;charset=utf-8
-      Content-Length:
-      - '35'
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - thin
-      Via:
-      - 1.1 vegur
-    body:
-      encoding: UTF-8
-      string: '{"name":["has already been taken"]}'
-    http_version: 
-  recorded_at: Tue, 16 Oct 2018 12:13:57 GMT
-- request:
-    method: post
-    uri: http://todoable.teachable.tech/api/lists
-    body:
-      encoding: UTF-8
-      string: '{"list":{"name":"List 4"}}'
-    headers:
-      User-Agent:
-      - Faraday v0.15.3
-      Authorization:
-      - Token token="a1e652a7-4969-4576-947e-2b8b5ad33325"
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 422
-      message: Unprocessable Entity
-    headers:
-      Date:
-      - Tue, 16 Oct 2018 12:13:56 GMT
-      Connection:
-      - keep-alive
-      Content-Type:
-      - application/json;charset=utf-8
-      Content-Length:
-      - '35'
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - thin
-      Via:
-      - 1.1 vegur
-    body:
-      encoding: UTF-8
-      string: '{"name":["has already been taken"]}'
-    http_version: 
-  recorded_at: Tue, 16 Oct 2018 12:13:57 GMT
-- request:
-    method: post
-    uri: http://todoable.teachable.tech/api/lists
-    body:
-      encoding: UTF-8
-      string: '{"list":{"name":"List 5"}}'
-    headers:
-      User-Agent:
-      - Faraday v0.15.3
-      Authorization:
-      - Token token="a1e652a7-4969-4576-947e-2b8b5ad33325"
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 422
-      message: Unprocessable Entity
-    headers:
-      Date:
-      - Tue, 16 Oct 2018 12:13:56 GMT
-      Connection:
-      - keep-alive
-      Content-Type:
-      - application/json;charset=utf-8
-      Content-Length:
-      - '35'
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - thin
-      Via:
-      - 1.1 vegur
-    body:
-      encoding: UTF-8
-      string: '{"name":["has already been taken"]}'
-    http_version: 
-  recorded_at: Tue, 16 Oct 2018 12:13:57 GMT
-- request:
-    method: get
-    uri: http://todoable.teachable.tech/api/lists
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.15.3
-      Authorization:
-      - Token token="a1e652a7-4969-4576-947e-2b8b5ad33325"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -267,7 +64,251 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 16 Oct 2018 12:13:56 GMT
+      - Tue, 16 Oct 2018 13:15:07 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '88'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"token":"542b5ed8-eb40-4430-90ea-a220a724cf3e","expires_at":"2018-10-16T13:35:08.133Z"}'
+    http_version: 
+  recorded_at: Tue, 16 Oct 2018 13:15:08 GMT
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/authenticate
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v0.15.3
+      Authorization:
+      - Basic Z2VvcmdlLnJhZmFlbEBnbWFpbC5jb206dG9kb2FibGU=
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 16 Oct 2018 13:15:07 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '88'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"token":"ea89d2bf-8a04-4d3c-8ce8-0091c12ce5ca","expires_at":"2018-10-16T13:35:08.265Z"}'
+    http_version: 
+  recorded_at: Tue, 16 Oct 2018 13:15:08 GMT
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/authenticate
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v0.15.3
+      Authorization:
+      - Basic Z2VvcmdlLnJhZmFlbEBnbWFpbC5jb206dG9kb2FibGU=
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 16 Oct 2018 13:15:07 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '88'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"token":"f6bda848-2531-433c-a04d-65cbabd8ed65","expires_at":"2018-10-16T13:35:08.412Z"}'
+    http_version: 
+  recorded_at: Tue, 16 Oct 2018 13:15:08 GMT
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/authenticate
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v0.15.3
+      Authorization:
+      - Basic Z2VvcmdlLnJhZmFlbEBnbWFpbC5jb206dG9kb2FibGU=
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 16 Oct 2018 13:15:07 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '88'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"token":"dee24284-3985-4313-8bb1-20816790e51e","expires_at":"2018-10-16T13:35:08.544Z"}'
+    http_version: 
+  recorded_at: Tue, 16 Oct 2018 13:15:08 GMT
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/authenticate
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v0.15.3
+      Authorization:
+      - Basic Z2VvcmdlLnJhZmFlbEBnbWFpbC5jb206dG9kb2FibGU=
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 16 Oct 2018 13:15:07 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '88'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"token":"f8645b39-cc8e-4d9f-9f64-c2891c73d66b","expires_at":"2018-10-16T13:35:08.663Z"}'
+    http_version: 
+  recorded_at: Tue, 16 Oct 2018 13:15:09 GMT
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/lists
+    body:
+      encoding: UTF-8
+      string: '"#<Todoable::Resources::List:0x00007f9cec9c3868>"'
+    headers:
+      User-Agent:
+      - Faraday v0.15.3
+      Authorization:
+      - Token token="f8645b39-cc8e-4d9f-9f64-c2891c73d66b"
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Date:
+      - Tue, 16 Oct 2018 13:15:08 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '27'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"name":["can''t be blank"]}'
+    http_version: 
+  recorded_at: Tue, 16 Oct 2018 13:15:09 GMT
+- request:
+    method: get
+    uri: http://todoable.teachable.tech/api/lists
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.3
+      Authorization:
+      - Token token="f8645b39-cc8e-4d9f-9f64-c2891c73d66b"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 16 Oct 2018 13:15:08 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -293,5 +334,409 @@ http_interactions:
         4","src":"http://todoable.teachable.tech/api/lists/bb69da6d-7299-47e9-9193-1fcbe6d90a3b","id":"bb69da6d-7299-47e9-9193-1fcbe6d90a3b"},{"name":"List
         5","src":"http://todoable.teachable.tech/api/lists/cf6eae9e-8ac8-40a0-bd02-36cfd455ee42","id":"cf6eae9e-8ac8-40a0-bd02-36cfd455ee42"}]}'
     http_version: 
-  recorded_at: Tue, 16 Oct 2018 12:13:57 GMT
+  recorded_at: Tue, 16 Oct 2018 13:15:09 GMT
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/lists
+    body:
+      encoding: UTF-8
+      string: '"#<Todoable::Resources::List:0x00007f9cec920b68>"'
+    headers:
+      User-Agent:
+      - Faraday v0.15.3
+      Authorization:
+      - Token token="f8645b39-cc8e-4d9f-9f64-c2891c73d66b"
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Date:
+      - Tue, 16 Oct 2018 13:15:08 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '27'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"name":["can''t be blank"]}'
+    http_version: 
+  recorded_at: Tue, 16 Oct 2018 13:15:09 GMT
+- request:
+    method: get
+    uri: http://todoable.teachable.tech/api/lists
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.3
+      Authorization:
+      - Token token="f8645b39-cc8e-4d9f-9f64-c2891c73d66b"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 16 Oct 2018 13:15:08 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '1491'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"lists":[{"name":"Todo 5","src":"http://todoable.teachable.tech/api/lists/084a6c73-be6b-4137-a762-43928a07e242","id":"084a6c73-be6b-4137-a762-43928a07e242"},{"name":"Todo
+        1","src":"http://todoable.teachable.tech/api/lists/e0809de1-b00e-49fc-88ef-7e30e5b93551","id":"e0809de1-b00e-49fc-88ef-7e30e5b93551"},{"name":"Todo
+        2","src":"http://todoable.teachable.tech/api/lists/24e888b9-322c-4791-8cb2-92cbefa83f14","id":"24e888b9-322c-4791-8cb2-92cbefa83f14"},{"name":"Todo
+        3","src":"http://todoable.teachable.tech/api/lists/58878311-d1cc-404e-9144-170252508b3c","id":"58878311-d1cc-404e-9144-170252508b3c"},{"name":"List
+        1","src":"http://todoable.teachable.tech/api/lists/2ba37be0-5fea-4316-8a92-b216597e85e4","id":"2ba37be0-5fea-4316-8a92-b216597e85e4"},{"name":"Todo
+        4","src":"http://todoable.teachable.tech/api/lists/e783b8c8-cba7-4bb5-ae86-e8ecf5bb797d","id":"e783b8c8-cba7-4bb5-ae86-e8ecf5bb797d"},{"name":"List
+        2","src":"http://todoable.teachable.tech/api/lists/f0c4c42b-dd83-4ccf-bc2e-5113602c14d1","id":"f0c4c42b-dd83-4ccf-bc2e-5113602c14d1"},{"name":"List
+        3","src":"http://todoable.teachable.tech/api/lists/7fe73cf7-d53e-44fe-ab8f-fa555a01eaf7","id":"7fe73cf7-d53e-44fe-ab8f-fa555a01eaf7"},{"name":"List
+        4","src":"http://todoable.teachable.tech/api/lists/bb69da6d-7299-47e9-9193-1fcbe6d90a3b","id":"bb69da6d-7299-47e9-9193-1fcbe6d90a3b"},{"name":"List
+        5","src":"http://todoable.teachable.tech/api/lists/cf6eae9e-8ac8-40a0-bd02-36cfd455ee42","id":"cf6eae9e-8ac8-40a0-bd02-36cfd455ee42"}]}'
+    http_version: 
+  recorded_at: Tue, 16 Oct 2018 13:15:09 GMT
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/lists
+    body:
+      encoding: UTF-8
+      string: '"#<Todoable::Resources::List:0x00007f9cebb426b8>"'
+    headers:
+      User-Agent:
+      - Faraday v0.15.3
+      Authorization:
+      - Token token="f8645b39-cc8e-4d9f-9f64-c2891c73d66b"
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Date:
+      - Tue, 16 Oct 2018 13:15:08 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '27'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"name":["can''t be blank"]}'
+    http_version: 
+  recorded_at: Tue, 16 Oct 2018 13:15:09 GMT
+- request:
+    method: get
+    uri: http://todoable.teachable.tech/api/lists
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.3
+      Authorization:
+      - Token token="f8645b39-cc8e-4d9f-9f64-c2891c73d66b"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 16 Oct 2018 13:15:08 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '1491'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"lists":[{"name":"Todo 5","src":"http://todoable.teachable.tech/api/lists/084a6c73-be6b-4137-a762-43928a07e242","id":"084a6c73-be6b-4137-a762-43928a07e242"},{"name":"Todo
+        1","src":"http://todoable.teachable.tech/api/lists/e0809de1-b00e-49fc-88ef-7e30e5b93551","id":"e0809de1-b00e-49fc-88ef-7e30e5b93551"},{"name":"Todo
+        2","src":"http://todoable.teachable.tech/api/lists/24e888b9-322c-4791-8cb2-92cbefa83f14","id":"24e888b9-322c-4791-8cb2-92cbefa83f14"},{"name":"Todo
+        3","src":"http://todoable.teachable.tech/api/lists/58878311-d1cc-404e-9144-170252508b3c","id":"58878311-d1cc-404e-9144-170252508b3c"},{"name":"List
+        1","src":"http://todoable.teachable.tech/api/lists/2ba37be0-5fea-4316-8a92-b216597e85e4","id":"2ba37be0-5fea-4316-8a92-b216597e85e4"},{"name":"Todo
+        4","src":"http://todoable.teachable.tech/api/lists/e783b8c8-cba7-4bb5-ae86-e8ecf5bb797d","id":"e783b8c8-cba7-4bb5-ae86-e8ecf5bb797d"},{"name":"List
+        2","src":"http://todoable.teachable.tech/api/lists/f0c4c42b-dd83-4ccf-bc2e-5113602c14d1","id":"f0c4c42b-dd83-4ccf-bc2e-5113602c14d1"},{"name":"List
+        3","src":"http://todoable.teachable.tech/api/lists/7fe73cf7-d53e-44fe-ab8f-fa555a01eaf7","id":"7fe73cf7-d53e-44fe-ab8f-fa555a01eaf7"},{"name":"List
+        4","src":"http://todoable.teachable.tech/api/lists/bb69da6d-7299-47e9-9193-1fcbe6d90a3b","id":"bb69da6d-7299-47e9-9193-1fcbe6d90a3b"},{"name":"List
+        5","src":"http://todoable.teachable.tech/api/lists/cf6eae9e-8ac8-40a0-bd02-36cfd455ee42","id":"cf6eae9e-8ac8-40a0-bd02-36cfd455ee42"}]}'
+    http_version: 
+  recorded_at: Tue, 16 Oct 2018 13:15:09 GMT
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/lists
+    body:
+      encoding: UTF-8
+      string: '"#<Todoable::Resources::List:0x00007f9cebab93e0>"'
+    headers:
+      User-Agent:
+      - Faraday v0.15.3
+      Authorization:
+      - Token token="f8645b39-cc8e-4d9f-9f64-c2891c73d66b"
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Date:
+      - Tue, 16 Oct 2018 13:15:08 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '27'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"name":["can''t be blank"]}'
+    http_version: 
+  recorded_at: Tue, 16 Oct 2018 13:15:09 GMT
+- request:
+    method: get
+    uri: http://todoable.teachable.tech/api/lists
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.3
+      Authorization:
+      - Token token="f8645b39-cc8e-4d9f-9f64-c2891c73d66b"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 16 Oct 2018 13:15:08 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '1491'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"lists":[{"name":"Todo 5","src":"http://todoable.teachable.tech/api/lists/084a6c73-be6b-4137-a762-43928a07e242","id":"084a6c73-be6b-4137-a762-43928a07e242"},{"name":"Todo
+        1","src":"http://todoable.teachable.tech/api/lists/e0809de1-b00e-49fc-88ef-7e30e5b93551","id":"e0809de1-b00e-49fc-88ef-7e30e5b93551"},{"name":"Todo
+        2","src":"http://todoable.teachable.tech/api/lists/24e888b9-322c-4791-8cb2-92cbefa83f14","id":"24e888b9-322c-4791-8cb2-92cbefa83f14"},{"name":"Todo
+        3","src":"http://todoable.teachable.tech/api/lists/58878311-d1cc-404e-9144-170252508b3c","id":"58878311-d1cc-404e-9144-170252508b3c"},{"name":"List
+        1","src":"http://todoable.teachable.tech/api/lists/2ba37be0-5fea-4316-8a92-b216597e85e4","id":"2ba37be0-5fea-4316-8a92-b216597e85e4"},{"name":"Todo
+        4","src":"http://todoable.teachable.tech/api/lists/e783b8c8-cba7-4bb5-ae86-e8ecf5bb797d","id":"e783b8c8-cba7-4bb5-ae86-e8ecf5bb797d"},{"name":"List
+        2","src":"http://todoable.teachable.tech/api/lists/f0c4c42b-dd83-4ccf-bc2e-5113602c14d1","id":"f0c4c42b-dd83-4ccf-bc2e-5113602c14d1"},{"name":"List
+        3","src":"http://todoable.teachable.tech/api/lists/7fe73cf7-d53e-44fe-ab8f-fa555a01eaf7","id":"7fe73cf7-d53e-44fe-ab8f-fa555a01eaf7"},{"name":"List
+        4","src":"http://todoable.teachable.tech/api/lists/bb69da6d-7299-47e9-9193-1fcbe6d90a3b","id":"bb69da6d-7299-47e9-9193-1fcbe6d90a3b"},{"name":"List
+        5","src":"http://todoable.teachable.tech/api/lists/cf6eae9e-8ac8-40a0-bd02-36cfd455ee42","id":"cf6eae9e-8ac8-40a0-bd02-36cfd455ee42"}]}'
+    http_version: 
+  recorded_at: Tue, 16 Oct 2018 13:15:09 GMT
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/lists
+    body:
+      encoding: UTF-8
+      string: '"#<Todoable::Resources::List:0x00007f9ceb2927c0>"'
+    headers:
+      User-Agent:
+      - Faraday v0.15.3
+      Authorization:
+      - Token token="f8645b39-cc8e-4d9f-9f64-c2891c73d66b"
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Date:
+      - Tue, 16 Oct 2018 13:15:08 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '27'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"name":["can''t be blank"]}'
+    http_version: 
+  recorded_at: Tue, 16 Oct 2018 13:15:09 GMT
+- request:
+    method: get
+    uri: http://todoable.teachable.tech/api/lists
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.3
+      Authorization:
+      - Token token="f8645b39-cc8e-4d9f-9f64-c2891c73d66b"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 16 Oct 2018 13:15:08 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '1491'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"lists":[{"name":"Todo 5","src":"http://todoable.teachable.tech/api/lists/084a6c73-be6b-4137-a762-43928a07e242","id":"084a6c73-be6b-4137-a762-43928a07e242"},{"name":"Todo
+        1","src":"http://todoable.teachable.tech/api/lists/e0809de1-b00e-49fc-88ef-7e30e5b93551","id":"e0809de1-b00e-49fc-88ef-7e30e5b93551"},{"name":"Todo
+        2","src":"http://todoable.teachable.tech/api/lists/24e888b9-322c-4791-8cb2-92cbefa83f14","id":"24e888b9-322c-4791-8cb2-92cbefa83f14"},{"name":"Todo
+        3","src":"http://todoable.teachable.tech/api/lists/58878311-d1cc-404e-9144-170252508b3c","id":"58878311-d1cc-404e-9144-170252508b3c"},{"name":"List
+        1","src":"http://todoable.teachable.tech/api/lists/2ba37be0-5fea-4316-8a92-b216597e85e4","id":"2ba37be0-5fea-4316-8a92-b216597e85e4"},{"name":"Todo
+        4","src":"http://todoable.teachable.tech/api/lists/e783b8c8-cba7-4bb5-ae86-e8ecf5bb797d","id":"e783b8c8-cba7-4bb5-ae86-e8ecf5bb797d"},{"name":"List
+        2","src":"http://todoable.teachable.tech/api/lists/f0c4c42b-dd83-4ccf-bc2e-5113602c14d1","id":"f0c4c42b-dd83-4ccf-bc2e-5113602c14d1"},{"name":"List
+        3","src":"http://todoable.teachable.tech/api/lists/7fe73cf7-d53e-44fe-ab8f-fa555a01eaf7","id":"7fe73cf7-d53e-44fe-ab8f-fa555a01eaf7"},{"name":"List
+        4","src":"http://todoable.teachable.tech/api/lists/bb69da6d-7299-47e9-9193-1fcbe6d90a3b","id":"bb69da6d-7299-47e9-9193-1fcbe6d90a3b"},{"name":"List
+        5","src":"http://todoable.teachable.tech/api/lists/cf6eae9e-8ac8-40a0-bd02-36cfd455ee42","id":"cf6eae9e-8ac8-40a0-bd02-36cfd455ee42"}]}'
+    http_version: 
+  recorded_at: Tue, 16 Oct 2018 13:15:09 GMT
+- request:
+    method: get
+    uri: http://todoable.teachable.tech/api/lists
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.3
+      Authorization:
+      - Token token="f8645b39-cc8e-4d9f-9f64-c2891c73d66b"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 16 Oct 2018 13:15:08 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '1491'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"lists":[{"name":"Todo 5","src":"http://todoable.teachable.tech/api/lists/084a6c73-be6b-4137-a762-43928a07e242","id":"084a6c73-be6b-4137-a762-43928a07e242"},{"name":"Todo
+        1","src":"http://todoable.teachable.tech/api/lists/e0809de1-b00e-49fc-88ef-7e30e5b93551","id":"e0809de1-b00e-49fc-88ef-7e30e5b93551"},{"name":"Todo
+        2","src":"http://todoable.teachable.tech/api/lists/24e888b9-322c-4791-8cb2-92cbefa83f14","id":"24e888b9-322c-4791-8cb2-92cbefa83f14"},{"name":"Todo
+        3","src":"http://todoable.teachable.tech/api/lists/58878311-d1cc-404e-9144-170252508b3c","id":"58878311-d1cc-404e-9144-170252508b3c"},{"name":"List
+        1","src":"http://todoable.teachable.tech/api/lists/2ba37be0-5fea-4316-8a92-b216597e85e4","id":"2ba37be0-5fea-4316-8a92-b216597e85e4"},{"name":"Todo
+        4","src":"http://todoable.teachable.tech/api/lists/e783b8c8-cba7-4bb5-ae86-e8ecf5bb797d","id":"e783b8c8-cba7-4bb5-ae86-e8ecf5bb797d"},{"name":"List
+        2","src":"http://todoable.teachable.tech/api/lists/f0c4c42b-dd83-4ccf-bc2e-5113602c14d1","id":"f0c4c42b-dd83-4ccf-bc2e-5113602c14d1"},{"name":"List
+        3","src":"http://todoable.teachable.tech/api/lists/7fe73cf7-d53e-44fe-ab8f-fa555a01eaf7","id":"7fe73cf7-d53e-44fe-ab8f-fa555a01eaf7"},{"name":"List
+        4","src":"http://todoable.teachable.tech/api/lists/bb69da6d-7299-47e9-9193-1fcbe6d90a3b","id":"bb69da6d-7299-47e9-9193-1fcbe6d90a3b"},{"name":"List
+        5","src":"http://todoable.teachable.tech/api/lists/cf6eae9e-8ac8-40a0-bd02-36cfd455ee42","id":"cf6eae9e-8ac8-40a0-bd02-36cfd455ee42"}]}'
+    http_version: 
+  recorded_at: Tue, 16 Oct 2018 13:15:09 GMT
 recorded_with: VCR 4.0.0

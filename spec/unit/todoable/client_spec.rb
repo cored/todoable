@@ -5,12 +5,14 @@ RSpec.describe Todoable::Client do
     described_class.new(http_adapter: http_adapter)
   end
   let(:http_adapter) do
-    instance_double "Adapters::HTTP", get: response
+    instance_double "Adapters::HTTP", get: get_response, post: post_response
   end
+  let(:get_response) { {} }
+  let(:post_response) { {} }
 
   describe "#lists" do
     context "when there are no lists created" do
-      let(:response) { { "lists" => [] } }
+      let(:get_response) { { "lists" => [] } }
 
       it "returns an empty collection" do
         expect(todoable_client.lists).to be_empty
@@ -18,7 +20,7 @@ RSpec.describe Todoable::Client do
     end
 
     context "when some lists exists" do
-      let(:response) do
+      let(:get_response) do
         {
           "lists" => [
             {"name" => "List 1", "src" => "/path", "id" => "uuid"},
@@ -37,6 +39,30 @@ RSpec.describe Todoable::Client do
           Todoable::Resources::List.new(name: "List 3", src: "/path", id: "uuid"),
         )
       end
+    end
+  end
+
+  describe "#create_list!" do
+    let(:post_response) { {} }
+    let(:get_response) do
+      {
+        "lists" => [
+          {"name" => "My List", "src" => "/path/list", "id" => "uuid"},
+        ]
+      }
+    end
+    let(:expected_list) do
+      Todoable::Resources::List.new(
+        name: "My List",
+        src: "/path/list",
+        id: "uuid"
+      )
+    end
+
+    it "creates a new list" do
+      expect(
+        todoable_client.create_list!(name: "My List")
+      ).to eql expected_list
     end
   end
 end
