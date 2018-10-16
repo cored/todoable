@@ -9,3 +9,4 @@ module Todoable
 end
 
 require_relative "./resources/token"
+require_relative "./resources/lists"

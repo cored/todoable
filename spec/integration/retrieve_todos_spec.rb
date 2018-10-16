@@ -11,14 +11,14 @@ RSpec.describe Todoable, :vcr do
 
       it "return a collection of lists" do
         expect(
-          todoable.lists
-        ).to match_array([
-          {name: "Todo 1"},
-          {name: "Todo 2"},
-          {name: "Todo 3"},
-          {name: "Todo 4"},
-          {name: "Todo 5"}
-        ])
+          todoable.lists.map(&:to_h)
+        ).to include(
+          a_hash_including({name: "List 1"}),
+          a_hash_including({name: "List 2"}),
+          a_hash_including({name: "List 3"}),
+          a_hash_including({name: "List 4"}),
+          a_hash_including({name: "List 5"}),
+        )
       end
     end
   end
@@ -30,7 +30,7 @@ RSpec.describe Todoable, :vcr do
 end
 
 def create_lists
-  1.upto(5) { |number| create_list("Todo #{number}") }
+  1.upto(5) { |number| create_list("List #{number}") }
 end
 
 def create_list(name)

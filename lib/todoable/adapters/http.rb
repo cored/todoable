@@ -47,7 +47,11 @@ module Todoable
         @token = Resources::Token.for(
           request(http_method: :post, url: Resources::Token.resource_url)
         )
-        build_authorization_headers if token.valid?
+        if token.valid?
+          build_authorization_headers
+        else
+          retrieve_token
+        end
       end
 
       def build_authorization_headers

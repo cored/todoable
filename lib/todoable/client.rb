@@ -5,10 +5,9 @@ module Todoable
     end
 
     def lists
-      parsed_response = http_adapter.get(url: "/api/lists")
-      parsed_response["lists"].map do |list|
-        {name: list["name"]}
-      end
+      Resources::Lists.for(
+        http_adapter.get(url: Resources::Lists.resource_url)
+      ).to_a
     end
 
     def create_list!(name:)
