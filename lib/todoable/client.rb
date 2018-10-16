@@ -21,10 +21,6 @@ module Todoable
 
     attr_reader :http_adapter
 
-    def build_create_list_request(name)
-      { "list" => {"name" => name} }
-    end
-
     def find_list_with(name)
       lists.find_by(name: name)
     end
