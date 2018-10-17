@@ -71,6 +71,25 @@ RSpec.describe Todoable::Client do
     end
   end
 
+  describe "#update_list!" do
+    let(:patch_response) do
+      { "name" => "Updated", "src" => "/path/list", "id" => "uuid" }
+    end
+    let(:expected_list) do
+      Todoable::Resources::List.new({
+        "name" => "Updated",
+        "src" => "/path/list",
+        "id" => "uuid"
+      })
+    end
+
+    it "return the updated list" do
+      expect(
+        todoable_client.update_list!(id: "uuid" , name: "Updated")
+      ).to eql expected_list
+    end
+  end
+
   describe "#delete_list!" do
     let(:delete_response) { {} }
 
@@ -117,8 +136,4 @@ RSpec.describe Todoable::Client do
     end
   end
 
-  describe "#update_list!" do
-    let(:patch_response) { {} }
-
-  end
 end

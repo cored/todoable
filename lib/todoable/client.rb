@@ -24,6 +24,16 @@ module Todoable
       )
     end
 
+    def update_list!(id:, name:)
+      list = Resources::List.new(id: id, name: name)
+      list.with(
+        http_adapter.patch(
+          url: "#{Resources::Lists.resource_url}/#{id}",
+          params: list.to_json,
+        )
+      )
+    end
+
     def delete_list!(id:)
       http_adapter.delete(url: "#{Resources::Lists.resource_url}/#{id}")
       self

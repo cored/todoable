@@ -93,14 +93,24 @@ module Todoable
 
         raise ERRORS.fetch(response.status)
       rescue Faraday::ParsingError
-        return response.body.merge(*params.values) if successful_response?
+        return response.body.merge(*params.values) if response_created_ok?
         raise UnprocessableEntityError.new("Unprocessable entity: #{response.body}")
       end
 
       def successful_response?
-        response.status == HTTP_OK_CODE ||
-          response.status == HTTP_CREATED_CODE ||
-          response.status == HTTP_NO_CONTENT_CODE
+          response_ok? || response_created_ok? || response_no_content?
+      end
+
+      def response_ok?
+        response.status == HTTP_OK_CODE
+      end
+
+      def response_created_ok?
+        response.status == HTTP_CREATED_CODE
+      end
+
+      def response_no_content?
+        response.status == HTTP_NO_CONTENT_CODE
       end
     end
   end

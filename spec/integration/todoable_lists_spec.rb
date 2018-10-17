@@ -53,10 +53,10 @@ RSpec.describe Todoable, :vcr do
 
   describe ".update_list!" do
     it "updates a list name" do
-      list = create_list("List to be updated")
+      list = create_list("list for todoable")
 
       expect(
-        todoable.update_list!(name: "Updated name")
+        todoable.update_list!(id: list.id, name: "Updated name")
       ).to match(
         a_hash_including({name: "Updated name"})
       )
