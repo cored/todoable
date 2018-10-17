@@ -95,7 +95,7 @@ RSpec.describe Todoable::Client do
 
   describe "#create_item!" do
     let(:post_response) do
-      { "item" => { "name" => "Feed the cat", "src" => "/path/list", "id" => "uuid" } }
+      { "name" => "Feed the cat", "src" => "/path/list", "id" => "uuid" }
     end
     let(:expected_item) do
       Todoable::Resources::Item.new({
