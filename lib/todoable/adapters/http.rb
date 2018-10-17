@@ -8,6 +8,7 @@ module Todoable
       class UnprocessableEntityError < StandardError; end
 
       HTTP_OK_CODE = 200
+      HTTP_CREATED_CODE = 201
       HTTP_UNAUTHORIZED_CODE = 401
       HTTP_UNPROCCESSABLE_ENTITY_CODE = 422
 
@@ -63,7 +64,7 @@ module Todoable
 
       def request(http_method:, url:, params: {})
         response = connection.public_send(http_method, url, params)
-        return response.body if response.status == HTTP_OK_CODE
+        return response.body if response.status == HTTP_OK_CODE || response.status == HTTP_CREATED_CODE
 
         case response.status
         when HTTP_UNAUTHORIZED_CODE
@@ -71,8 +72,8 @@ module Todoable
         when HTTP_UNPROCCESSABLE_ENTITY_CODE
           UnprocessableEntityError.new("Unprocessable entity: #{response.body}")
         end
-      rescue Faraday::ParsingError
-        raise InvalidCredentialsError.new("Please verify your username or password")
+      # rescue Faraday::ParsingError
+      #   raise InvalidCredentialsError.new("Please verify your username or password")
       end
     end
   end

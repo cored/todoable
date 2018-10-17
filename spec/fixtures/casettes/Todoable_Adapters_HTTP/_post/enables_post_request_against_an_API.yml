@@ -1,0 +1,87 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/authenticate
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v0.15.3
+      Authorization:
+      - Basic Z2VvcmdlLnJhZmFlbEBnbWFpbC5jb206dG9kb2FibGU=
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 17 Oct 2018 12:26:33 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '88'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"token":"9de63d95-32f7-4935-b22b-6ba5ba736fe1","expires_at":"2018-10-17T12:46:33.635Z"}'
+    http_version: 
+  recorded_at: Wed, 17 Oct 2018 12:26:32 GMT
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/lists
+    body:
+      encoding: UTF-8
+      string: '{"list":{"name":"My new List"}}'
+    headers:
+      User-Agent:
+      - Faraday v0.15.3
+      Authorization:
+      - Token token="9de63d95-32f7-4935-b22b-6ba5ba736fe1"
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Wed, 17 Oct 2018 12:26:33 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json;charset=utf-8
+      Location:
+      - http://todoable.teachable.tech/api/lists/7ad41da8-1e81-4636-ae7f-5f2905974c31
+      Content-Length:
+      - '152'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"name":"My new List","src":"http://todoable.teachable.tech/api/lists/7ad41da8-1e81-4636-ae7f-5f2905974c31","id":"7ad41da8-1e81-4636-ae7f-5f2905974c31"}'
+    http_version: 
+  recorded_at: Wed, 17 Oct 2018 12:26:32 GMT
+recorded_with: VCR 4.0.0
