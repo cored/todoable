@@ -1,3 +1,6 @@
+require "faraday"
+require "faraday_middleware"
+
 module Todoable
   module Adapters
     class HTTP
@@ -47,11 +50,8 @@ module Todoable
         @token = Resources::Token.for(
           request(http_method: :post, url: Resources::Token.resource_url)
         )
-        if token.valid?
-          build_authorization_headers
-        else
-          retrieve_token
-        end
+
+        build_authorization_headers if token.valid?
       end
 
       def build_authorization_headers
@@ -68,6 +68,8 @@ module Todoable
         when HTTP_UNPROCCESSABLE_ENTITY_CODE
           UnprocessableEntityError.new("Unprocessable entity: #{response.body}")
         end
+      rescue Faraday::ParsingError
+        raise InvalidCredentialsError.new("Please verify your username or password")
       end
     end
   end
