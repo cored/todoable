@@ -27,8 +27,7 @@ RSpec.describe Todoable, :vcr do
       expect(
         todoable
         .create_list!(name: "Testing List")
-        .lists.to_a.map(&:to_h)
-      ).to include(
+      ).to match(
         a_hash_including({name: "Testing List"}),
       )
     end

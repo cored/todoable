@@ -9,6 +9,10 @@ module Todoable
       attribute :id, Types::String.meta(omittable: true)
       attribute :src, Types::String.meta(omittable: true)
 
+      def with(attrs)
+        self.new(to_h.merge(attrs))
+      end
+
       def to_json
         { "list" => {"name" => name} }
       end

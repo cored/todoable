@@ -43,19 +43,20 @@ RSpec.describe Todoable::Client do
   end
 
   describe "#create_list!" do
-    let(:post_response) { {} }
-    let(:get_response) do
-      {
-        "lists" => [
-          {"name" => "My List", "src" => "/path/list", "id" => "uuid"},
-        ]
-      }
+    let(:post_response) do
+      {"name" => "My List", "src" => "/path/list", "id" => "uuid"}
+    end
+    let(:get_response) { {} }
+    let(:expected_list) do
+      Todoable::Resources::List.new(
+        {"name" => "My List", "src" => "/path/list", "id" => "uuid"}
+      )
     end
 
     it "return client for successful creation" do
       expect(
         todoable_client.create_list!(name: "My List")
-      ).to eql todoable_client
+      ).to eql expected_list
     end
   end
 end

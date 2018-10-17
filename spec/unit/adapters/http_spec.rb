@@ -43,8 +43,10 @@ RSpec.describe Todoable::Adapters::HTTP, :vcr do
           username: username,
           password: password,
         ).post(url: "/api/lists",
-          params: { "list" => {"name" => "My new List"} }).keys
-      ).to include("name", "id", "src")
+          params: { "list" => {"name" => "My new List"} })
+      ).to match(
+        a_hash_including({ "name" => "My new List"})
+      )
     end
   end
 end
