@@ -1,5 +1,3 @@
-require "json"
-
 module Todoable
   module Resources
     class List < Dry::Struct
@@ -19,6 +17,8 @@ module Todoable
     end
 
     class Lists < Dry::Struct
+      include Enumerable
+
       def self.resource_url
         "/api/lists"
       end
@@ -33,16 +33,16 @@ module Todoable
 
       attribute :lists, Types::Array.of(List).meta(omittable: true)
 
+      def each(&block)
+        lists.each(&block)
+      end
+
       NoList = Struct.new(:name, :id, :src)
       def find_by(attrs)
         lists.find do |list|
           list.to_h.has_key?(*attrs.keys) &&
             list.to_h.has_value?(*attrs.values)
         end || NoList.new
-      end
-
-      def to_a
-        lists
       end
     end
   end
