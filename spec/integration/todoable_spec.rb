@@ -46,7 +46,7 @@ RSpec.describe Todoable, :vcr do
       expect(
         todoable.list(id: list.to_h[:id])
       ).to match(
-        a_hash_including({name: "List for retrieval"})
+        a_hash_including({name: "List for retrieval"}),
       )
     end
   end

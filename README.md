@@ -29,15 +29,14 @@ require "todoable"
 ### Authentication
 
 ```
-Todoable.authenticate!(username: <your_username>, password: <your_password>)
+client = Todoable.authenticate!(username: <your_username>, password: <your_password>)
 ```
 
 ### Retrieve lists
 
 ```
-Todoable.lists
-#=>
-#<Todoable::Resources::Lists lists=[
+client.lists
+=> #<Todoable::Resources::Lists lists=[
   #<Todoable::Resources::List
     name="My new List"
     id="7ad41da8-1e81-4636-ae7f-5f2905974c31"
@@ -50,12 +49,18 @@ Todoable.lists
 
 ### Retrieve a single list
 
+```
+list = client.create_list!(name: "For single retrieval")
+client.list(id: list.id)
+=> #<Todoable::Resources::List name="For single retrieval" id=nil src=nil>
+```
+
 
 ### Create a list
 
 ```
 Todoable.create_list!(name: "my_new_list")
-#=> #<Todoable::Resources::List
+=> #<Todoable::Resources::List
       name="For the readme"
       id="1e87973c-61b3-42ce-8e2c-e3021b1d4500"
       src="http://todoable.teachable.tech/api/lists/1e87973c-61b3-42ce-8e2c-e3021b1d4500">
@@ -67,7 +72,7 @@ Todoable.create_list!(name: "my_new_list")
 # For successful creation it will return the client
 list = client.list.find_by(name: "For the readme")
 Todoable.delete_list!(id: list.id)
-#=> #<Todoable::Client:0x00007fe23d02de70 ...>
+=> #<Todoable::Client:0x00007fe23d02de70 ...>
 ```
 
 ## Development
