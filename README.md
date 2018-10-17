@@ -2,6 +2,8 @@
 
 Wrapper for the Todoable API
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/2e46f4fbc22fc4170fdc/maintainability)](https://codeclimate.com/github/cored/todoable/maintainability)
+
 ## Installation
 
 Add this line to your application's Gemfile:
