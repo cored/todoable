@@ -31,9 +31,22 @@ RSpec.describe Todoable, :vcr do
     it "creates a new list" do
       expect(
         todoable
-        .create_list!(name: "Testing List")
+        .create_list!(name: "Testing List").to_h
       ).to match(
         a_hash_including({name: "Testing List"}),
+      )
+    end
+  end
+
+  describe ".list" do
+    it "returns a list" do
+      delete_list("List for retrieval")
+      list = create_list("List for retrieval")
+
+      expect(
+        todoable.list(id: list.to_h[:id])
+      ).to match(
+        a_hash_including({name: "List for retrieval"}),
       )
     end
   end
