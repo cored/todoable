@@ -2,29 +2,35 @@ require "spec_helper"
 
 RSpec.describe Todoable, :vcr do
   subject(:todoable) do
-    described_class.authenticate!(username: ENV["API_USERNAME"], password: ENV["API_PASSWORD"])
+    described_class.authenticate!(username: ENV["API_USERNAME"],
+                                  password: ENV["API_PASSWORD"])
   end
 
   describe ".lists" do
-    context "when several lists exists" do
-      before { create_lists }
+    before { create_lists }
 
-      it "return a collection of lists" do
-        expect(
-          todoable.lists.to_a.map(&:to_h)
-        ).to include(
-          a_hash_including({name: "List 1"}),
-          a_hash_including({name: "List 2"}),
-          a_hash_including({name: "List 3"}),
-          a_hash_including({name: "List 4"}),
-          a_hash_including({name: "List 5"}),
-        )
-      end
+    it "return a collection of lists" do
+      expect(
+        todoable.lists.to_a.map(&:to_h)
+      ).to include(
+        a_hash_including({name: "List 1"}),
+        a_hash_including({name: "List 2"}),
+        a_hash_including({name: "List 3"}),
+        a_hash_including({name: "List 4"}),
+        a_hash_including({name: "List 5"}),
+      )
     end
   end
 
   describe ".create_list!" do
-    context "when passing a blank name for a new list" do
+    it "creates a new list" do
+      expect(
+        todoable
+        .create_list!(name: "Testing List")
+        .lists.to_a.map(&:to_h)
+      ).to include(
+        a_hash_including({name: "Testing List"}),
+      )
     end
   end
 end
