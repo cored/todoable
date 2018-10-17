@@ -10,6 +10,12 @@ module Todoable
       )
     end
 
+    def list(id:)
+      Resources::List.new(
+        http_adapter.get(url: "#{Resources::Lists.resource_url}/#{id}")
+      )
+    end
+
     def create_list!(name:)
       list = Resources::List.new(name: name)
       list.with(

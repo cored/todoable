@@ -71,10 +71,29 @@ RSpec.describe Todoable::Client do
     let(:get_response) { {} }
     let(:delete_response) { {} }
 
-    it "return client for successful creation" do
+    it "returns client for successful creation" do
       expect(
         todoable_client.delete_list!(id: "list_id")
       ).to eql todoable_client
+    end
+  end
+
+  describe "#list" do
+    let(:post_response) { {} }
+    let(:get_response) do
+      {"name" => "My List", "src" => "/path/list", "id" => "uuid"}
+    end
+    let(:delete_response) { {} }
+    let(:expected_list) do
+      Todoable::Resources::List.new(
+        {"name" => "My List", "src" => "/path/list", "id" => "uuid"}
+      )
+    end
+
+    it "returns a list base on an id" do
+      expect(
+        todoable_client.list(id: "uuid")
+      ).to eql expected_list
     end
   end
 end
