@@ -1,0 +1,145 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/authenticate
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v0.15.3
+      Authorization:
+      - Basic Z2VvcmdlLnJhZmFlbEBnbWFpbC5jb206dG9kb2FibGU=
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 17 Oct 2018 23:11:24 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dc5c590e4e83774b289ce1fb7290120fe1539817884; expires=Thu, 17-Oct-19
+        23:11:24 GMT; path=/; domain=.teachable.tech; HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - 73162708FEBD448B8F87E3AAF6A5E265
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 46b671b103e10ee5-EWR
+    body:
+      encoding: ASCII-8BIT
+      string: '{"token":"8d27a701-1c37-429e-82ee-99e431d9c561","expires_at":"2018-10-17T23:31:24.865Z"}'
+    http_version: 
+  recorded_at: Wed, 17 Oct 2018 23:11:23 GMT
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/lists
+    body:
+      encoding: UTF-8
+      string: '{"list":{"name":"Updating an item"}}'
+    headers:
+      User-Agent:
+      - Faraday v0.15.3
+      Authorization:
+      - Token token="8d27a701-1c37-429e-82ee-99e431d9c561"
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Wed, 17 Oct 2018 23:11:25 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '157'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dd0cbb9ad64b0728bde3769da75a78b1a1539817884; expires=Thu, 17-Oct-19
+        23:11:24 GMT; path=/; domain=.teachable.tech; HttpOnly
+      Location:
+      - http://todoable.teachable.tech/api/lists/d1b940df-ebaf-4dd6-8fcf-34c86573ebd9
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - 6F84C0BE00074C7B8E016FD37F0B6AD6
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 46b671b534fc9200-EWR
+    body:
+      encoding: UTF-8
+      string: '{"name":"Updating an item","src":"http://todoable.teachable.tech/api/lists/d1b940df-ebaf-4dd6-8fcf-34c86573ebd9","id":"d1b940df-ebaf-4dd6-8fcf-34c86573ebd9"}'
+    http_version: 
+  recorded_at: Wed, 17 Oct 2018 23:11:24 GMT
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/lists/d1b940df-ebaf-4dd6-8fcf-34c86573ebd9/items
+    body:
+      encoding: UTF-8
+      string: '{"item":{"name":"Buy Milk!"}}'
+    headers:
+      User-Agent:
+      - Faraday v0.15.3
+      Authorization:
+      - Token token="8d27a701-1c37-429e-82ee-99e431d9c561"
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Wed, 17 Oct 2018 23:11:34 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '212'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d13a45883b419259d538119526bfa9c551539817894; expires=Thu, 17-Oct-19
+        23:11:34 GMT; path=/; domain=.teachable.tech; HttpOnly
+      Location:
+      - http://todoable.teachable.tech/api/lists/d1b940df-ebaf-4dd6-8fcf-34c86573ebd9/items/476c87c9-07c2-42b0-9192-629baef47f6a
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - B2A8F0A9F0B64D4A9E72432FBA8C7C92
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 46b671f3257d185e-EWR
+    body:
+      encoding: UTF-8
+      string: '{"name":"Buy Milk!","finished_at":null,"src":"http://todoable.teachable.tech/api/lists/d1b940df-ebaf-4dd6-8fcf-34c86573ebd9/items/476c87c9-07c2-42b0-9192-629baef47f6a","id":"476c87c9-07c2-42b0-9192-629baef47f6a"}'
+    http_version: 
+  recorded_at: Wed, 17 Oct 2018 23:11:33 GMT
+recorded_with: VCR 4.0.0

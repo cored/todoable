@@ -41,6 +41,15 @@ module Todoable
       )
     end
 
+    def mark_item_finished!(list_id:, id:)
+      Resources::Item.new(
+        http_adapter.patch(
+          url: "#{Resources::Item.resource_url(list_id: list_id)}/finished",
+          params: {}
+        )
+      )
+    end
+
     private
 
     attr_reader :http_adapter
