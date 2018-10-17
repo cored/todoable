@@ -29,6 +29,11 @@ require "todoable"
 ### Authentication
 
 ```ruby
+# Export the following environment variables
+# export TODOABLE_USERNAME="<your_user_name>"
+# export TODOABLE_PASSWORD="<your_password>"
+# or be explicit it and pass your credentials to the client as so
+
 client = Todoable.authenticate!(username: <your_username>, password: <your_password>)
 ```
 

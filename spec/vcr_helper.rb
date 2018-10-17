@@ -10,6 +10,6 @@ VCR.configure do |config|
   # Setup rspec metadata
   config.configure_rspec_metadata!
 
-  config.filter_sensitive_data("API_USERNAME") { "<HIDDEN_USER>" }
-  config.filter_sensitive_data("API_PASSWORD") { "<HIDDEN_PASS>" }
+  config.filter_sensitive_data("TODOABLE_USERNAME") { "<HIDDEN_USER>" }
+  config.filter_sensitive_data("TODOABLE_PASSWORD") { "<HIDDEN_PASS>" }
 end

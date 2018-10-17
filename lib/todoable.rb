@@ -7,7 +7,7 @@ require_relative "./todoable/client"
 module Todoable
   BASE_API_URL = ENV.fetch("BASE_API_URL", "http://todoable.teachable.tech/")
 
-  def self.authenticate!(username:, password:)
+  def self.authenticate!(username: ENV["TODOABLE_USERNAME"], password: ENV["TODOABLE_PASSWORD"])
     Client.new(
       http_adapter: Adapters::HTTP.with_credentials(username: username,
                                                     password: password)
