@@ -14,15 +14,11 @@ module Todoable
       list = Resources::List.new(name: name)
       http_adapter.post(url: Resources::Lists.resource_url,
                         params: list.to_json)
-      find_list_with(name)
+      self
     end
 
     private
 
     attr_reader :http_adapter
-
-    def find_list_with(name)
-      lists.find_by(name: name)
-    end
   end
 end
