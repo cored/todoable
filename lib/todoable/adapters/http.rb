@@ -62,7 +62,6 @@ module Todoable
       end
 
       def patch(url:, params:)
-        require 'pry'; binding.pry
         authorize!
         request(
           http_method: :patch,
@@ -94,6 +93,7 @@ module Todoable
 
         raise ERRORS.fetch(response.status)
       rescue Faraday::ParsingError
+        return response.body.merge(*params.values) if successful_response?
         raise UnprocessableEntityError.new("Unprocessable entity: #{response.body}")
       end
 
