@@ -3,9 +3,9 @@ module Todoable
     class List < Dry::Struct
       transform_keys(&:to_sym)
 
-      attribute :name, Types::String.default("")
-      attribute :id, Types::String.meta(omittable: true)
-      attribute :src, Types::String.meta(omittable: true)
+      attribute :name, Types::Name
+      attribute :id, Types::Id
+      attribute :src, Types::Src
       attribute :items, Types::Array.of(Item).default([])
 
       def with(attrs)

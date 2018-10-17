@@ -11,9 +11,9 @@ module Todoable
         new(attrs["item"])
       end
 
-      attribute :name, Types::String
-      attribute :id, Types::String.meta(omittable: true)
-      attribute :src, Types::String.meta(omittable: true)
+      attribute :name, Types::Name
+      attribute :id, Types::Id
+      attribute :src, Types::Src
       attribute :finished_at, Types::Date.meta(omittable: true)
 
       def with(attrs)
