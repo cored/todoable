@@ -11,11 +11,13 @@ RSpec.describe Todoable::Client do
                     delete: delete_response)
   end
 
+  let(:get_response) { {} }
+  let(:post_response) { {} }
+  let(:delete_response) { {} }
+
   describe "#lists" do
     context "when there are no lists created" do
       let(:get_response) { { "lists" => [] } }
-      let(:post_response) { {} }
-      let(:delete_response) { {} }
 
       it "returns an empty collection" do
         expect(todoable_client.lists).to eql(Todoable::Resources::Lists.new(lists: []))
@@ -32,8 +34,6 @@ RSpec.describe Todoable::Client do
           ]
         }
       end
-      let(:post_response) { {} }
-      let(:delete_response) { {} }
 
       it "returns a collection of lists" do
         expect(
@@ -51,8 +51,6 @@ RSpec.describe Todoable::Client do
     let(:post_response) do
       {"name" => "My List", "src" => "/path/list", "id" => "uuid"}
     end
-    let(:get_response) { {} }
-    let(:delete_response) { {} }
     let(:expected_list) do
       Todoable::Resources::List.new(
         {"name" => "My List", "src" => "/path/list", "id" => "uuid"}
@@ -79,11 +77,9 @@ RSpec.describe Todoable::Client do
   end
 
   describe "#list" do
-    let(:post_response) { {} }
     let(:get_response) do
       {"name" => "My List", "src" => "/path/list", "id" => "uuid"}
     end
-    let(:delete_response) { {} }
     let(:expected_list) do
       Todoable::Resources::List.new(
         {"name" => "My List", "src" => "/path/list", "id" => "uuid"}
@@ -95,5 +91,25 @@ RSpec.describe Todoable::Client do
         todoable_client.list(id: "uuid")
       ).to eql expected_list
     end
+  end
+
+  describe "#create_item!" do
+    let(:post_response) do
+      { "name" => "Feed the cat", "src" => "/path/list", "id" => "uuid" }
+    end
+    let(:expected_item) do
+      Todoable::Resources::Item.new({
+        "name" => "Feed the cat",
+        "src" => "/path/list",
+        "id" => "uuid"
+      })
+    end
+
+    it "return the created item" do
+      expect(
+        todoable_client.create_item!(list_id: "list_id", name: "Feed the cat")
+      ).to eql expected_item
+    end
+
   end
 end

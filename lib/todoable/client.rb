@@ -29,6 +29,16 @@ module Todoable
       self
     end
 
+    def create_item!(list_id:, name:)
+      item = Resources::Item.new(name: name)
+      item.with(
+        http_adapter.post(
+          url: Resources::Item.resource_url(list_id: list_id),
+          params: item.to_json
+        )
+      )
+    end
+
     private
 
     attr_reader :http_adapter
