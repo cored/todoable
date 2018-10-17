@@ -8,8 +8,13 @@ RSpec.describe Todoable::Client do
     instance_double("Adapters::HTTP",
                     get: get_response,
                     post: post_response,
-                    delete: delete_response)
+                    delete: delete_response,
+                    patch: patch_response)
   end
+  let(:get_response) { {} }
+  let(:post_response) { {} }
+  let(:delete_response) { {} }
+  let(:patch_response) { {} }
 
   let(:get_response) { {} }
   let(:post_response) { {} }
@@ -20,7 +25,9 @@ RSpec.describe Todoable::Client do
       let(:get_response) { { "lists" => [] } }
 
       it "returns an empty collection" do
-        expect(todoable_client.lists).to eql(Todoable::Resources::Lists.new(lists: []))
+        expect(
+          todoable_client.lists
+        ).to eql(Todoable::Resources::Lists.new(lists: []))
       end
     end
 
@@ -65,8 +72,6 @@ RSpec.describe Todoable::Client do
   end
 
   describe "#delete_list!" do
-    let(:post_response) { {} }
-    let(:get_response) { {} }
     let(:delete_response) { {} }
 
     it "returns client for successful creation" do
@@ -110,6 +115,10 @@ RSpec.describe Todoable::Client do
         todoable_client.create_item!(list_id: "list_id", name: "Feed the cat")
       ).to eql expected_item
     end
+  end
+
+  describe "#update_list!" do
+    let(:patch_response) { {} }
 
   end
 end

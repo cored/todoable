@@ -10,7 +10,7 @@ module Todoable
 
       HTTP_OK_CODE = 200
       HTTP_CREATED_CODE = 201
-      HTTP_DELETED_CODE = 204
+      HTTP_NO_CONTENT_CODE = 204
       HTTP_UNAUTHORIZED_CODE = 401
       HTTP_UNPROCCESSABLE_ENTITY_CODE = 422
 
@@ -61,6 +61,16 @@ module Todoable
         )
       end
 
+      def patch(url:, params:)
+        require 'pry'; binding.pry
+        authorize!
+        request(
+          http_method: :patch,
+          url: url,
+          params: params,
+        )
+      end
+
       private
 
       attr_reader :connection, :token, :response
@@ -88,7 +98,9 @@ module Todoable
       end
 
       def successful_response?
-        response.status == HTTP_OK_CODE || response.status == HTTP_CREATED_CODE || response.status == HTTP_DELETED_CODE
+        response.status == HTTP_OK_CODE ||
+          response.status == HTTP_CREATED_CODE ||
+          response.status == HTTP_NO_CONTENT_CODE
       end
     end
   end
