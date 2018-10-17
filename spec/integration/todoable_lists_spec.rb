@@ -2,8 +2,8 @@ require "spec_helper"
 
 RSpec.describe Todoable, :vcr do
   subject(:todoable) do
-    described_class.authenticate!(username: ENV["API_USERNAME"],
-                                  password: ENV["API_PASSWORD"])
+    described_class.authenticate!(username: ENV["TODOABLE_USERNAME"],
+                                  password: ENV["TODOABLE_PASSWORD"])
   end
 
   describe ".lists" do

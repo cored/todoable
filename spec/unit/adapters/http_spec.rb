@@ -2,8 +2,8 @@ require "spec_helper"
 
 RSpec.describe Todoable::Adapters::HTTP, :vcr do
   subject(:http_adapter) { described_class }
-  let(:username) { ENV["API_USERNAME"] }
-  let(:password) { ENV["API_PASSWORD"] }
+  let(:username) { ENV["TODOABLE_USERNAME"] }
+  let(:password) { ENV["TODOABLE_PASSWORD"] }
 
   context "when http errors" do
     context "when passing invalid credentials" do
