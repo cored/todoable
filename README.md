@@ -69,10 +69,21 @@ Todoable.create_list!(name: "my_new_list")
 ### Delete a list
 
 ```
-# For successful creation it will return the client
 list = client.list.find_by(name: "For the readme")
 Todoable.delete_list!(id: list.id)
 => #<Todoable::Client:0x00007fe23d02de70 ...>
+```
+
+### Create a todo item
+
+```
+list = client.lists.first
+client.create_item!(list_id: list.id, name: "My new item")
+=> #<Todoable::Resources::Item
+      name="My new item"
+      id="69bf4828-2cb4-4f96-bced-37fa928c8fb2"
+      src="http://todoable.teachable.tech/api/lists/7ad41da8-1e81-4636-ae7f-5f2905974c31/items/69bf4828-2cb4-4f96-bced-37fa928c8fb2"
+      finished_at=nil>
 ```
 
 ## Development
