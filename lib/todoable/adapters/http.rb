@@ -88,7 +88,7 @@ module Todoable
       end
 
       def successful_response?
-        response.status == HTTP_OK_CODE || response.status == HTTP_CREATED_CODE
+        response.status == HTTP_OK_CODE || response.status == HTTP_CREATED_CODE || response.status == HTTP_DELETED_CODE
       end
     end
   end

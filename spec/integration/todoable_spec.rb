@@ -26,7 +26,7 @@ RSpec.describe Todoable, :vcr do
   end
 
   describe ".create_list!" do
-    before { delete_list(name: "Testing List") }
+    before { delete_list("Testing List") }
 
     it "creates a new list" do
       expect(
