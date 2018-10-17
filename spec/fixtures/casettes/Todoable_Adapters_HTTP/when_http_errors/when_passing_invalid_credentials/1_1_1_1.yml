@@ -23,7 +23,7 @@ http_interactions:
       message: Unauthorized
     headers:
       Date:
-      - Wed, 17 Oct 2018 12:24:51 GMT
+      - Wed, 17 Oct 2018 13:35:23 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -46,5 +46,5 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Wed, 17 Oct 2018 12:24:51 GMT
+  recorded_at: Wed, 17 Oct 2018 13:35:23 GMT
 recorded_with: VCR 4.0.0
