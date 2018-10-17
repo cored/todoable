@@ -1,46 +1,6 @@
 module Todoable
   module Resources
-    class Item < Dry::Struct
-      transform_keys(&:to_sym)
 
-      def self.resource_url(list_id:)
-        "/api/lists/#{list_id}/items"
-      end
-
-      def self.for(attrs)
-        new(attrs["item"])
-      end
-
-      attribute :name, Types::String
-      attribute :id, Types::String.meta(omittable: true)
-      attribute :src, Types::String.meta(omittable: true)
-      attribute :finished_at, Types::Date.meta(omittable: true)
-
-      def with(attrs)
-        new(to_h.merge(attrs))
-      end
-
-      def to_json
-        { "item" => { "name" => name } }
-      end
-    end
-
-    class List < Dry::Struct
-      transform_keys(&:to_sym)
-
-      attribute :name, Types::String.default("")
-      attribute :id, Types::String.meta(omittable: true)
-      attribute :src, Types::String.meta(omittable: true)
-      attribute :items, Types::Array.of(Item).default([])
-
-      def with(attrs)
-        self.new(to_h.merge(attrs))
-      end
-
-      def to_json
-        { "list" => {"name" => name} }
-      end
-    end
 
     class Lists < Dry::Struct
       include Enumerable
