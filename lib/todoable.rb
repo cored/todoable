@@ -1,9 +1,7 @@
 require "todoable/version"
 require "dotenv/load"
-require "faraday"
-require "faraday_middleware"
-require_relative "./todoable/resources"
 require_relative "./todoable/adapters"
+require_relative "./todoable/resources"
 require_relative "./todoable/client"
 
 module Todoable

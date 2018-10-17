@@ -5,14 +5,17 @@ RSpec.describe Todoable::Client do
     described_class.new(http_adapter: http_adapter)
   end
   let(:http_adapter) do
-    instance_double "Adapters::HTTP", get: get_response, post: post_response
+    instance_double("Adapters::HTTP",
+                    get: get_response,
+                    post: post_response,
+                    delete: delete_response)
   end
-  let(:get_response) { {} }
-  let(:post_response) { {} }
 
   describe "#lists" do
     context "when there are no lists created" do
       let(:get_response) { { "lists" => [] } }
+      let(:post_response) { {} }
+      let(:delete_response) { {} }
 
       it "returns an empty collection" do
         expect(todoable_client.lists).to eql(Todoable::Resources::Lists.new(lists: []))
@@ -29,6 +32,8 @@ RSpec.describe Todoable::Client do
           ]
         }
       end
+      let(:post_response) { {} }
+      let(:delete_response) { {} }
 
       it "returns a collection of lists" do
         expect(
@@ -43,18 +48,32 @@ RSpec.describe Todoable::Client do
   end
 
   describe "#create_list!" do
-    let(:post_response) { {} }
-    let(:get_response) do
-      {
-        "lists" => [
-          {"name" => "My List", "src" => "/path/list", "id" => "uuid"},
-        ]
-      }
+    let(:post_response) do
+      {"name" => "My List", "src" => "/path/list", "id" => "uuid"}
     end
+    let(:get_response) { {} }
+    let(:delete_response) { {} }
+    let(:expected_list) do
+      Todoable::Resources::List.new(
+        {"name" => "My List", "src" => "/path/list", "id" => "uuid"}
+      )
+    end
+
+    it "return the successful created list" do
+      expect(
+        todoable_client.create_list!(name: "My List")
+      ).to eql expected_list
+    end
+  end
+
+  describe "#delete_list!" do
+    let(:post_response) { {} }
+    let(:get_response) { {} }
+    let(:delete_response) { {} }
 
     it "return client for successful creation" do
       expect(
-        todoable_client.create_list!(name: "My List")
+        todoable_client.delete_list!(id: "list_id")
       ).to eql todoable_client
     end
   end

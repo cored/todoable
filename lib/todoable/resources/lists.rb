@@ -1,3 +1,5 @@
+require "json"
+
 module Todoable
   module Resources
     class List < Dry::Struct
@@ -6,6 +8,14 @@ module Todoable
       attribute :name, Types::String
       attribute :id, Types::String.meta(omittable: true)
       attribute :src, Types::String.meta(omittable: true)
+
+      def with(attrs)
+        self.new(to_h.merge(attrs))
+      end
+
+      def to_json
+        { "list" => {"name" => name} }
+      end
     end
 
     class Lists < Dry::Struct

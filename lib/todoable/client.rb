@@ -12,8 +12,14 @@ module Todoable
 
     def create_list!(name:)
       list = Resources::List.new(name: name)
-      http_adapter.post(url: Resources::Lists.resource_url,
-                        params: list.to_json)
+      list.with(
+        http_adapter.post(url: Resources::Lists.resource_url,
+                          params: list.to_json)
+      )
+    end
+
+    def delete_list!(id:)
+      http_adapter.delete(url: "#{Resources::Lists.resource_url}/#{id}")
       self
     end
 

@@ -1,8 +1,8 @@
 # Todoable
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/todoable`. To experiment with that code, run `bin/console` for an interactive prompt.
+Wrapper for the Todoable API
 
-TODO: Delete this and the text above, and describe your gem
+[![Maintainability](https://api.codeclimate.com/v1/badges/2e46f4fbc22fc4170fdc/maintainability)](https://codeclimate.com/github/cored/todoable/maintainability)
 
 ## Installation
 
@@ -22,7 +22,30 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+require "todoable"
+```
+
+### Authentication
+
+```
+Todoable.authenticate!(username: <your_username>, password: <your_password>)
+```
+
+### Retrieve Lists
+
+```
+Todoable.lists
+#=>
+```
+
+### Create Lists
+
+```
+Todoable.create_list!(name: "my_new_list")
+Todoable.lists.to_a.last
+#=>
+```
 
 ## Development
 
