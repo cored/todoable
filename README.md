@@ -22,19 +22,19 @@ Or install it yourself as:
 
 ## Usage
 
-```
+```ruby
 require "todoable"
 ```
 
 ### Authentication
 
-```
+```ruby
 client = Todoable.authenticate!(username: <your_username>, password: <your_password>)
 ```
 
 ### Retrieve lists
 
-```
+```ruby
 client.lists
 => #<Todoable::Resources::Lists lists=[
   #<Todoable::Resources::List
@@ -49,7 +49,7 @@ client.lists
 
 ### Retrieve a single list
 
-```
+```ruby
 list = client.create_list!(name: "For single retrieval")
 client.list(id: list.id)
 => #<Todoable::Resources::List name="For single retrieval" id=nil src=nil>
@@ -58,7 +58,7 @@ client.list(id: list.id)
 
 ### Create a list
 
-```
+```ruby
 Todoable.create_list!(name: "my_new_list")
 => #<Todoable::Resources::List
       name="For the readme"
@@ -68,7 +68,7 @@ Todoable.create_list!(name: "my_new_list")
 
 ### Delete a list
 
-```
+```ruby
 list = client.list.find_by(name: "For the readme")
 Todoable.delete_list!(id: list.id)
 => #<Todoable::Client:0x00007fe23d02de70 ...>
@@ -76,7 +76,7 @@ Todoable.delete_list!(id: list.id)
 
 ### Create a todo item
 
-```
+```ruby
 list = client.lists.first
 client.create_item!(list_id: list.id, name: "My new item")
 => #<Todoable::Resources::Item
