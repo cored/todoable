@@ -7,14 +7,14 @@ module Todoable
         "/api/authenticate"
       end
 
-      def self.for(attrs)
+      attribute :token, Types::String.default("")
+      attribute :expires_at, Types::Strict::DateTime.default(DateTime.new)
+
+      def with(attrs)
         new(
           attrs.merge("expires_at" => DateTime.parse(attrs["expires_at"]))
         )
       end
-
-      attribute :token, Types::String.default("")
-      attribute :expires_at, Types::Strict::DateTime
 
       def valid?
         !token.empty? && !has_twenty_minutes_passed?

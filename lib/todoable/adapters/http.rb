@@ -23,10 +23,11 @@ module Todoable
 
       def initialize(connection:)
         @connection = connection
-        retrieve_token
+        @token = Resources::Token.new
       end
 
       def post(url:, params:)
+        authorize!
         request(
           http_method: :post,
           url: url,
@@ -35,6 +36,7 @@ module Todoable
       end
 
       def get(url:)
+        authorize!
         request(
           http_method: :get,
           url: url,
@@ -46,16 +48,17 @@ module Todoable
 
       attr_reader :connection, :token
 
-      def retrieve_token
-        @token = Resources::Token.for(
-          request(http_method: :post, url: Resources::Token.resource_url)
-        )
-
-        build_authorization_headers if token.valid?
-      end
-
-      def build_authorization_headers
-        connection.authorization(:Token, token: token)
+      def authorize!
+        unless token.valid?
+          @token = token.with(
+            request(
+              http_method: :post,
+              url: Resources::Token.resource_url,
+              params: {}
+            )
+          )
+          connection.authorization(:Token, token: token)
+        end
       end
 
       def request(http_method:, url:, params: {})
