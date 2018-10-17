@@ -7,7 +7,10 @@ RSpec.describe Todoable, :vcr do
   end
 
   describe ".lists" do
-    before { create_lists }
+    before do
+      delete_lists
+      create_lists
+    end
 
     it "return a collection of lists" do
       expect(
@@ -23,6 +26,8 @@ RSpec.describe Todoable, :vcr do
   end
 
   describe ".create_list!" do
+    before { delete_list(name: "Testing List") }
+
     it "creates a new list" do
       expect(
         todoable
@@ -40,4 +45,13 @@ end
 
 def create_list(name)
   todoable.create_list!(name: name)
+end
+
+def delete_lists
+  1.upto(5) { |number| delete_list("List #{number}") }
+end
+
+def delete_list(name)
+  list = todoable.lists.find_by(name: name)
+  todoable.delete_list!(id: list.id)
 end

@@ -18,6 +18,11 @@ module Todoable
       )
     end
 
+    def delete_list!(id:)
+      http_adapter.delete(url: "#{Resources::Lists.resource_url}/#{id}")
+      self
+    end
+
     private
 
     attr_reader :http_adapter

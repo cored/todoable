@@ -9,6 +9,7 @@ module Todoable
 
       HTTP_OK_CODE = 200
       HTTP_CREATED_CODE = 201
+      HTTP_DELETED_CODE = 204
       HTTP_UNAUTHORIZED_CODE = 401
       HTTP_UNPROCCESSABLE_ENTITY_CODE = 422
 
@@ -45,9 +46,18 @@ module Todoable
         )
       end
 
+      def delete(url:)
+        authorize!
+        request(
+          http_method: :delete,
+          url: url,
+          params: {},
+        )
+      end
+
       private
 
-      attr_reader :connection, :token
+      attr_reader :connection, :token, :response
 
       def authorize!
         unless token.valid?
@@ -63,8 +73,8 @@ module Todoable
       end
 
       def request(http_method:, url:, params: {})
-        response = connection.public_send(http_method, url, params)
-        return response.body if response.status == HTTP_OK_CODE || response.status == HTTP_CREATED_CODE
+        @response = connection.public_send(http_method, url, params)
+        return response.body if successful_response?
 
         case response.status
         when HTTP_UNAUTHORIZED_CODE
@@ -72,8 +82,10 @@ module Todoable
         when HTTP_UNPROCCESSABLE_ENTITY_CODE
           UnprocessableEntityError.new("Unprocessable entity: #{response.body}")
         end
-      # rescue Faraday::ParsingError
-      #   raise InvalidCredentialsError.new("Please verify your username or password")
+      end
+
+      def successful_response?
+        response.status == HTTP_OK_CODE || response.status == HTTP_CREATED_CODE
       end
     end
   end
