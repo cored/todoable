@@ -137,4 +137,11 @@ RSpec.describe Todoable::Client do
     end
   end
 
+  describe "#mark_item_finished!" do
+    let(:patch_response) do
+
+    end
+
+  end
+
 end
