@@ -51,7 +51,7 @@ module Todoable
 
     def delete_item!(list_id:, id:)
       item = Resources::Item.new(list_id: list_id, id: id)
-      adapter.delete(url: item.url)
+      adapter.delete(url: item.delete_url)
       self
     end
 

@@ -17,6 +17,10 @@ module Todoable
         "#{url}/#{id}/finish"
       end
 
+      def delete_url
+        "#{url}/#{id}"
+      end
+
       def url
         "/api/lists/#{list_id}/items"
       end

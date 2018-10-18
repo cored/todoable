@@ -41,4 +41,26 @@ RSpec.describe Todoable, :vcr do
       ).to_not be_nil
     end
   end
+
+  describe "#delete_item!" do
+    it "remove an item from a list" do
+      list_for_item_deletion = todoable.create_list!(
+        name: "Deleting item list"
+      )
+      item_to_be_deleted = todoable.create_item!(
+        list_id: list_for_item_deletion.id,
+        name: "Delete Me!"
+      )
+      todoable.delete_item!(
+        list_id: list_for_item_deletion.id,
+        id: item_to_be_deleted.id,
+      )
+
+      refreshed_list = todoable.list(id: list_for_item_deletion.id)
+
+      expect(
+        refreshed_list.items
+      ).to be_empty
+    end
+  end
 end
