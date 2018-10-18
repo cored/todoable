@@ -13,6 +13,10 @@ module Todoable
       attribute :list_id, Types::String.meta(omittable: true)
       attribute :finished_at, Types::Date.meta(omittable: true)
 
+      def finish_url
+        "#{url}/#{id}/finish"
+      end
+
       def url
         "/api/lists/#{list_id}/items"
       end

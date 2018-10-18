@@ -23,7 +23,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 17 Oct 2018 23:11:24 GMT
+      - Thu, 18 Oct 2018 20:19:10 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -31,32 +31,32 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=dc5c590e4e83774b289ce1fb7290120fe1539817884; expires=Thu, 17-Oct-19
-        23:11:24 GMT; path=/; domain=.teachable.tech; HttpOnly
+      - __cfduid=d46d59545ab2fc1c7da0b92235d5856881539893949; expires=Fri, 18-Oct-19
+        20:19:09 GMT; path=/; domain=.teachable.tech; HttpOnly
       X-Content-Type-Options:
       - nosniff
       X-Request-Id:
-      - 73162708FEBD448B8F87E3AAF6A5E265
+      - 97E17EF285534050A416C4D295A017E2
       Server:
       - cloudflare
       Cf-Ray:
-      - 46b671b103e10ee5-EWR
+      - 46bdb2c0808e3d3d-CPH
     body:
       encoding: ASCII-8BIT
-      string: '{"token":"8d27a701-1c37-429e-82ee-99e431d9c561","expires_at":"2018-10-17T23:31:24.865Z"}'
+      string: '{"token":"e41caae8-08d0-40a8-9607-2eaec607ef83","expires_at":"2018-10-18T20:39:10.158Z"}'
     http_version: 
-  recorded_at: Wed, 17 Oct 2018 23:11:23 GMT
+  recorded_at: Thu, 18 Oct 2018 20:19:10 GMT
 - request:
     method: post
-    uri: http://todoable.teachable.tech/api/lists
+    uri: http://todoable.teachable.tech/api/lists/
     body:
       encoding: UTF-8
-      string: '{"list":{"name":"Updating an item"}}'
+      string: '{"list":{"name":"Updating item list"}}'
     headers:
       User-Agent:
       - Faraday v0.15.3
       Authorization:
-      - Token token="8d27a701-1c37-429e-82ee-99e431d9c561"
+      - Token token="e41caae8-08d0-40a8-9607-2eaec607ef83"
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -69,42 +69,42 @@ http_interactions:
       message: Created
     headers:
       Date:
-      - Wed, 17 Oct 2018 23:11:25 GMT
+      - Thu, 18 Oct 2018 20:19:15 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
-      - '157'
+      - '159'
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=dd0cbb9ad64b0728bde3769da75a78b1a1539817884; expires=Thu, 17-Oct-19
-        23:11:24 GMT; path=/; domain=.teachable.tech; HttpOnly
+      - __cfduid=d75612c698c5f5226212e72258b09ae391539893955; expires=Fri, 18-Oct-19
+        20:19:15 GMT; path=/; domain=.teachable.tech; HttpOnly
       Location:
-      - http://todoable.teachable.tech/api/lists/d1b940df-ebaf-4dd6-8fcf-34c86573ebd9
+      - http://todoable.teachable.tech/api/lists/0d8e0e74-843a-4d07-9e8a-ad0a466896aa
       X-Content-Type-Options:
       - nosniff
       X-Request-Id:
-      - 6F84C0BE00074C7B8E016FD37F0B6AD6
+      - AEFED9D6A39C4C9984C1E7F954840B1B
       Server:
       - cloudflare
       Cf-Ray:
-      - 46b671b534fc9200-EWR
+      - 46bdb2e612eb3d2b-CPH
     body:
       encoding: UTF-8
-      string: '{"name":"Updating an item","src":"http://todoable.teachable.tech/api/lists/d1b940df-ebaf-4dd6-8fcf-34c86573ebd9","id":"d1b940df-ebaf-4dd6-8fcf-34c86573ebd9"}'
+      string: '{"name":"Updating item list","src":"http://todoable.teachable.tech/api/lists/0d8e0e74-843a-4d07-9e8a-ad0a466896aa","id":"0d8e0e74-843a-4d07-9e8a-ad0a466896aa"}'
     http_version: 
-  recorded_at: Wed, 17 Oct 2018 23:11:24 GMT
+  recorded_at: Thu, 18 Oct 2018 20:19:15 GMT
 - request:
     method: post
-    uri: http://todoable.teachable.tech/api/lists/d1b940df-ebaf-4dd6-8fcf-34c86573ebd9/items
+    uri: http://todoable.teachable.tech/api/lists/0d8e0e74-843a-4d07-9e8a-ad0a466896aa/items
     body:
       encoding: UTF-8
-      string: '{"item":{"name":"Buy Milk!"}}'
+      string: '{"item":{"name":"Buy Kale!"}}'
     headers:
       User-Agent:
       - Faraday v0.15.3
       Authorization:
-      - Token token="8d27a701-1c37-429e-82ee-99e431d9c561"
+      - Token token="e41caae8-08d0-40a8-9607-2eaec607ef83"
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -117,7 +117,7 @@ http_interactions:
       message: Created
     headers:
       Date:
-      - Wed, 17 Oct 2018 23:11:34 GMT
+      - Thu, 18 Oct 2018 20:19:23 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
@@ -125,21 +125,67 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d13a45883b419259d538119526bfa9c551539817894; expires=Thu, 17-Oct-19
-        23:11:34 GMT; path=/; domain=.teachable.tech; HttpOnly
+      - __cfduid=d80d489ec28d230fd140d02b4dbcca1271539893962; expires=Fri, 18-Oct-19
+        20:19:22 GMT; path=/; domain=.teachable.tech; HttpOnly
       Location:
-      - http://todoable.teachable.tech/api/lists/d1b940df-ebaf-4dd6-8fcf-34c86573ebd9/items/476c87c9-07c2-42b0-9192-629baef47f6a
+      - http://todoable.teachable.tech/api/lists/0d8e0e74-843a-4d07-9e8a-ad0a466896aa/items/3577f042-b84d-486f-9732-3d8b4ed499af
       X-Content-Type-Options:
       - nosniff
       X-Request-Id:
-      - B2A8F0A9F0B64D4A9E72432FBA8C7C92
+      - C6BC62C9653241A9A572C0F00C3616C3
       Server:
       - cloudflare
       Cf-Ray:
-      - 46b671f3257d185e-EWR
+      - 46bdb313c0623cb3-CPH
     body:
       encoding: UTF-8
-      string: '{"name":"Buy Milk!","finished_at":null,"src":"http://todoable.teachable.tech/api/lists/d1b940df-ebaf-4dd6-8fcf-34c86573ebd9/items/476c87c9-07c2-42b0-9192-629baef47f6a","id":"476c87c9-07c2-42b0-9192-629baef47f6a"}'
+      string: '{"name":"Buy Kale!","finished_at":null,"src":"http://todoable.teachable.tech/api/lists/0d8e0e74-843a-4d07-9e8a-ad0a466896aa/items/3577f042-b84d-486f-9732-3d8b4ed499af","id":"3577f042-b84d-486f-9732-3d8b4ed499af"}'
     http_version: 
-  recorded_at: Wed, 17 Oct 2018 23:11:33 GMT
+  recorded_at: Thu, 18 Oct 2018 20:19:23 GMT
+- request:
+    method: put
+    uri: http://todoable.teachable.tech/api/lists/0d8e0e74-843a-4d07-9e8a-ad0a466896aa/items/3577f042-b84d-486f-9732-3d8b4ed499af/finish
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v0.15.3
+      Authorization:
+      - Token token="e41caae8-08d0-40a8-9607-2eaec607ef83"
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 18 Oct 2018 20:19:33 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '18'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d33638fe45312eef55531c5c6c797afa31539893972; expires=Fri, 18-Oct-19
+        20:19:32 GMT; path=/; domain=.teachable.tech; HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - 4FFB22C10B214A5D8C3917E0139C589A
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 46bdb352001b3cef-CPH
+    body:
+      encoding: UTF-8
+      string: Buy Kale! finished
+    http_version: 
+  recorded_at: Thu, 18 Oct 2018 20:19:33 GMT
 recorded_with: VCR 4.0.0

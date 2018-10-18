@@ -25,14 +25,14 @@ RSpec.describe Todoable, :vcr do
   end
 
   describe "#mark_item_finished!" do
-    let(:list_for_item) do
-      todoable.create_list!(name: "Updating an item")
-    end
-    let(:item_to_mark_finished) do
-      todoable.create_item!(list_id: list_for_item.id, name: "Buy Milk!")
-    end
-
     it "marks an item on a list as finished" do
+      list_for_item =  todoable.create_list!(name: "Updating item list")
+
+      item_to_mark_finished = todoable.create_item!(
+        list_id: list_for_item.id,
+        name: "Buy Kale!"
+      )
+
       expect(
         todoable.mark_item_finished!(
           list_id: list_for_item.id,

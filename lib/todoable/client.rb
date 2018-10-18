@@ -15,9 +15,7 @@ module Todoable
 
     def create_list!(name:)
       list = Resources::List.new(name: name)
-      list.with(
-        http_adapter.post(url: list.url, params: list.to_json)
-      )
+      list.with(http_adapter.post(url: list.url, params: list.to_json))
     end
 
     def update_list!(id:, name:)
@@ -42,12 +40,19 @@ module Todoable
     end
 
     def mark_item_finished!(list_id:, id:)
-      Resources::Item.new(
-        http_adapter.patch(
-          url: "#{Resources::Item.resource_url(list_id: list_id)}/finished",
+      item = Resources::Item.new(list_id: list_id, id: id)
+      item.with(
+        http_adapter.put(
+          url: item.finish_url,
           params: {}
-        )
+        ).merge(finished_at: Date.today)
       )
+    end
+
+    def delete_item!(list_id:, id:)
+      item = Resources::Item.new(list_id: list_id, id: id)
+      http_adapter.delete(url: item.url)
+      self
     end
 
     private

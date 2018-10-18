@@ -6,6 +6,7 @@ module Todoable
     class HTTP
       class InvalidCredentialsError < StandardError; end
       class UnprocessableEntityError < StandardError; end
+      class NotFoundError < StandardError; end
       class UnauthorizedError < StandardError; end
 
       HTTP_OK_CODE = 200
@@ -16,7 +17,7 @@ module Todoable
 
       ERRORS = {
         HTTP_UNAUTHORIZED_CODE => InvalidCredentialsError.new("Please verify your username or password"),
-        HTTP_UNPROCCESSABLE_ENTITY_CODE => UnprocessableEntityError.new("Unprocessable entity")
+        HTTP_UNPROCCESSABLE_ENTITY_CODE => UnprocessableEntityError.new("Unprocessable entity"),
       }
 
       def self.with_credentials(username:, password:, http_client: Faraday)
@@ -70,6 +71,15 @@ module Todoable
         )
       end
 
+      def put(url:, params:)
+        authorize!
+        request(
+          http_method: :put,
+          url: url,
+          params: params,
+        )
+      end
+
       private
 
       attr_reader :connection, :token, :response
@@ -93,7 +103,13 @@ module Todoable
 
         raise ERRORS.fetch(response.status)
       rescue Faraday::ParsingError
-        return response.body.merge(*params.values) if response_created_ok?
+        if response_created_ok?
+          if params.empty?
+            return response.body
+          else
+            return response.body.merge(*params.values)
+          end
+        end
         raise UnprocessableEntityError.new("Unprocessable entity: #{response.body}")
       end
 
