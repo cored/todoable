@@ -23,24 +23,29 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 17 Oct 2018 13:36:14 GMT
-      Connection:
-      - keep-alive
+      - Thu, 18 Oct 2018 00:53:20 GMT
       Content-Type:
       - application/json
-      Content-Length:
-      - '88'
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dd3125012f496c5620bc58c3b54dce1a31539824000; expires=Fri, 18-Oct-19
+        00:53:20 GMT; path=/; domain=.teachable.tech; HttpOnly
       X-Content-Type-Options:
       - nosniff
+      X-Request-Id:
+      - E14976B77A2F4E448ED02B4E82F3EA88
       Server:
-      - thin
-      Via:
-      - 1.1 vegur
+      - cloudflare
+      Cf-Ray:
+      - 46b7070302849212-EWR
     body:
-      encoding: UTF-8
-      string: '{"token":"76cdc5d6-759c-47d5-8134-a9632f77c094","expires_at":"2018-10-17T13:56:14.370Z"}'
+      encoding: ASCII-8BIT
+      string: '{"token":"2321e99d-3c49-4b1f-baf4-cebd2426953e","expires_at":"2018-10-18T01:13:20.957Z"}'
     http_version: 
-  recorded_at: Wed, 17 Oct 2018 13:36:14 GMT
+  recorded_at: Thu, 18 Oct 2018 00:53:19 GMT
 - request:
     method: get
     uri: http://todoable.teachable.tech/api/list/id
@@ -51,7 +56,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.15.3
       Authorization:
-      - Token token="76cdc5d6-759c-47d5-8134-a9632f77c094"
+      - Token token="2321e99d-3c49-4b1f-baf4-cebd2426953e"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -62,28 +67,35 @@ http_interactions:
       message: Not Found
     headers:
       Date:
-      - Wed, 17 Oct 2018 13:36:14 GMT
-      Connection:
-      - keep-alive
+      - Thu, 18 Oct 2018 00:53:21 GMT
       Content-Type:
       - text/html;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d74e22a00471236e9679ed5d4a1045bfa1539824001; expires=Fri, 18-Oct-19
+        00:53:21 GMT; path=/; domain=.teachable.tech; HttpOnly
       X-Cascade:
       - pass
-      Content-Length:
-      - '18'
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
+      X-Request-Id:
+      - E52A83123291443F89F92DD2E4D9E14E
+      X-Error-Digest:
+      - b094ffc9600212769692a563549dac15596d7eb66d812e9e6ae3cd024be5f3cc
       Server:
-      - thin
-      Via:
-      - 1.1 vegur
+      - cloudflare
+      Cf-Ray:
+      - 46b7070652009236-EWR
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       string: "<h1>Not Found</h1>"
     http_version: 
-  recorded_at: Wed, 17 Oct 2018 13:36:14 GMT
+  recorded_at: Thu, 18 Oct 2018 00:53:19 GMT
 recorded_with: VCR 4.0.0

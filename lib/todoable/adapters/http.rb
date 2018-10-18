@@ -79,7 +79,7 @@ module Todoable
           @token = token.with(
             request(
               http_method: :post,
-              url: Resources::Token.resource_url,
+              url: token.url,
               params: {}
             )
           )

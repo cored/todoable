@@ -6,7 +6,11 @@ RSpec.describe Todoable, :vcr do
                                   password: ENV["TODOABLE_PASSWORD"])
   end
 
+  include IntegrationSpecHelpers
+
   describe "#create_item!" do
+    before { delete_list("Another list for testing") }
+
     let(:list_for_item) do
       todoable.create_list!(name: "Another list for testing")
     end

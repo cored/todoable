@@ -62,7 +62,7 @@ RSpec.describe Todoable::Adapters::HTTP, :vcr do
     let(:list_to_update) do
       http_adapter.post(
         url: "/api/lists",
-        params: { list: { name: "updating a list"} }
+        params: { list: { name: "the new one"} }
       )
     end
 

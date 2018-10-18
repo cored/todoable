@@ -23,7 +23,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 17 Oct 2018 23:28:19 GMT
+      - Thu, 18 Oct 2018 12:57:00 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -31,32 +31,32 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=dcaac0bb072ef85a848db20baf38782851539818898; expires=Thu, 17-Oct-19
-        23:28:18 GMT; path=/; domain=.teachable.tech; HttpOnly
+      - __cfduid=d991e8522cde97af9b44b8408db83ce7c1539867420; expires=Fri, 18-Oct-19
+        12:57:00 GMT; path=/; domain=.teachable.tech; HttpOnly
       X-Content-Type-Options:
       - nosniff
       X-Request-Id:
-      - BF51FAE02B524CB5A2A48F89C2B35C27
+      - 79768C9F29CD48EDA10B9034362AA29D
       Server:
       - cloudflare
       Cf-Ray:
-      - 46b68a7642171852-EWR
+      - 46bb2b0f24b3920c-EWR
     body:
       encoding: ASCII-8BIT
-      string: '{"token":"4c2b954d-a16d-43c8-be52-176a98bbc6ca","expires_at":"2018-10-17T23:48:19.456Z"}'
+      string: '{"token":"64ad52e2-c78e-4051-ac60-af2ba47224b3","expires_at":"2018-10-18T13:17:00.456Z"}'
     http_version: 
-  recorded_at: Wed, 17 Oct 2018 23:28:18 GMT
+  recorded_at: Thu, 18 Oct 2018 12:57:00 GMT
 - request:
     method: post
     uri: http://todoable.teachable.tech/api/lists
     body:
       encoding: UTF-8
-      string: '{"list":{"name":"updating a list"}}'
+      string: '{"list":{"name":"the new one"}}'
     headers:
       User-Agent:
       - Faraday v0.15.3
       Authorization:
-      - Token token="4c2b954d-a16d-43c8-be52-176a98bbc6ca"
+      - Token token="64ad52e2-c78e-4051-ac60-af2ba47224b3"
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -69,34 +69,34 @@ http_interactions:
       message: Created
     headers:
       Date:
-      - Wed, 17 Oct 2018 23:28:19 GMT
+      - Thu, 18 Oct 2018 12:57:00 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
-      - '156'
+      - '152'
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d14076e882ad12df65e84219cc549e9df1539818899; expires=Thu, 17-Oct-19
-        23:28:19 GMT; path=/; domain=.teachable.tech; HttpOnly
+      - __cfduid=d12b673cc73c8700285bda7ef0ad97fce1539867420; expires=Fri, 18-Oct-19
+        12:57:00 GMT; path=/; domain=.teachable.tech; HttpOnly
       Location:
-      - http://todoable.teachable.tech/api/lists/83ec14b9-d0c5-47e6-8310-66b7eb4623fd
+      - http://todoable.teachable.tech/api/lists/bfdb13d8-9045-4d62-a71e-529750d98bc5
       X-Content-Type-Options:
       - nosniff
       X-Request-Id:
-      - 944758D0FB644CDF8B89DCF892988F07
+      - 6F6BFE0F5FB44887B7781E9E2506159D
       Server:
       - cloudflare
       Cf-Ray:
-      - 46b68a79f077927e-EWR
+      - 46bb2b1224719206-EWR
     body:
       encoding: UTF-8
-      string: '{"name":"updating a list","src":"http://todoable.teachable.tech/api/lists/83ec14b9-d0c5-47e6-8310-66b7eb4623fd","id":"83ec14b9-d0c5-47e6-8310-66b7eb4623fd"}'
+      string: '{"name":"the new one","src":"http://todoable.teachable.tech/api/lists/bfdb13d8-9045-4d62-a71e-529750d98bc5","id":"bfdb13d8-9045-4d62-a71e-529750d98bc5"}'
     http_version: 
-  recorded_at: Wed, 17 Oct 2018 23:28:18 GMT
+  recorded_at: Thu, 18 Oct 2018 12:57:00 GMT
 - request:
     method: patch
-    uri: http://todoable.teachable.tech/api/lists/83ec14b9-d0c5-47e6-8310-66b7eb4623fd
+    uri: http://todoable.teachable.tech/api/lists/bfdb13d8-9045-4d62-a71e-529750d98bc5
     body:
       encoding: UTF-8
       string: '{"list":{"name":"My new List"}}'
@@ -104,7 +104,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.15.3
       Authorization:
-      - Token token="4c2b954d-a16d-43c8-be52-176a98bbc6ca"
+      - Token token="64ad52e2-c78e-4051-ac60-af2ba47224b3"
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -117,7 +117,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 17 Oct 2018 23:28:26 GMT
+      - Thu, 18 Oct 2018 12:57:09 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
@@ -125,19 +125,19 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d9d75c207157304cf230d246f6e3be4181539818906; expires=Thu, 17-Oct-19
-        23:28:26 GMT; path=/; domain=.teachable.tech; HttpOnly
+      - __cfduid=df3e6eecc615e0a0f809c9fb8fe6c8e5e1539867429; expires=Fri, 18-Oct-19
+        12:57:09 GMT; path=/; domain=.teachable.tech; HttpOnly
       X-Content-Type-Options:
       - nosniff
       X-Request-Id:
-      - 78C0EF03B4364A2482609F06258E0ED8
+      - 99E8650F347842A783D8F586F04A216E
       Server:
       - cloudflare
       Cf-Ray:
-      - 46b68aa2c47e91f4-EWR
+      - 46bb2b49d73b924e-EWR
     body:
       encoding: UTF-8
       string: My new List updated
     http_version: 
-  recorded_at: Wed, 17 Oct 2018 23:28:25 GMT
+  recorded_at: Thu, 18 Oct 2018 12:57:09 GMT
 recorded_with: VCR 4.0.0

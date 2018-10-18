@@ -3,12 +3,12 @@ module Todoable
     class Token < Dry::Struct
       transform_keys(&:to_sym)
 
-      def self.resource_url
-        "/api/authenticate"
-      end
-
       attribute :token, Types::String.default("")
       attribute :expires_at, Types::Strict::DateTime.default(DateTime.new)
+
+      def url
+        "/api/authenticate"
+      end
 
       def with(attrs)
         new(

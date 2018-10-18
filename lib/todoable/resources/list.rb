@@ -8,6 +8,10 @@ module Todoable
       attribute :src, Types::Src
       attribute :items, Types::Array.of(Item).default([])
 
+      def url
+        "/api/lists/#{id}"
+      end
+
       def with(attrs)
         self.new(to_h.merge(attrs))
       end
