@@ -103,14 +103,16 @@ module Todoable
 
         raise ERRORS.fetch(response.status)
       rescue Faraday::ParsingError
-        if response_created_ok?
-          if params.empty?
-            return response.body
-          else
-            return response.body.merge(*params.values)
-          end
-        end
+        return build_response_after_mutation(params) if response_created_ok?
         raise UnprocessableEntityError.new("Unprocessable entity: #{response.body}")
+      end
+
+      def build_response_after_mutation(params)
+        if params.empty?
+          response.body
+        else
+          response.body.merge(*params.values)
+        end
       end
 
       def successful_response?
