@@ -6,6 +6,8 @@ RSpec.describe Todoable, :vcr do
                                   password: ENV["TODOABLE_PASSWORD"])
   end
 
+  include IntegrationSpecHelpers
+
   describe ".lists" do
     before do
       delete_lists
@@ -26,7 +28,7 @@ RSpec.describe Todoable, :vcr do
   end
 
   describe ".create_list!" do
-    before { delete_list("Testing List") }
+    before {  delete_list("Testing List") }
 
     it "creates a new list" do
       expect(
@@ -52,6 +54,8 @@ RSpec.describe Todoable, :vcr do
   end
 
   describe ".update_list!" do
+    before { delete_list("list for todoable") }
+
     it "updates a list name" do
       list = create_list("list for todoable")
 
@@ -64,19 +68,3 @@ RSpec.describe Todoable, :vcr do
   end
 end
 
-def create_lists
-  1.upto(5) { |number| create_list("List #{number}") }
-end
-
-def create_list(name)
-  todoable.create_list!(name: name)
-end
-
-def delete_lists
-  1.upto(5) { |number| delete_list("List #{number}") }
-end
-
-def delete_list(name)
-  list = todoable.lists.find_by(name: name)
-  todoable.delete_list!(id: list.id)
-end

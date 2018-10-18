@@ -23,24 +23,29 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 17 Oct 2018 12:32:16 GMT
-      Connection:
-      - keep-alive
+      - Thu, 18 Oct 2018 00:53:21 GMT
       Content-Type:
       - application/json
-      Content-Length:
-      - '88'
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d338d1ca389f78bf49c7ad26dc8209d471539824001; expires=Fri, 18-Oct-19
+        00:53:21 GMT; path=/; domain=.teachable.tech; HttpOnly
       X-Content-Type-Options:
       - nosniff
+      X-Request-Id:
+      - 535523E400DA4BDAB1FDB6D83D99396C
       Server:
-      - thin
-      Via:
-      - 1.1 vegur
+      - cloudflare
+      Cf-Ray:
+      - 46b70706b2bc919a-EWR
     body:
-      encoding: UTF-8
-      string: '{"token":"fa44c931-4c4d-42f0-8237-87286ca0ac72","expires_at":"2018-10-17T12:52:17.254Z"}'
+      encoding: ASCII-8BIT
+      string: '{"token":"b843fac3-7947-45c1-b978-f9b670407504","expires_at":"2018-10-18T01:13:21.463Z"}'
     http_version: 
-  recorded_at: Wed, 17 Oct 2018 12:32:16 GMT
+  recorded_at: Thu, 18 Oct 2018 00:53:20 GMT
 - request:
     method: get
     uri: http://todoable.teachable.tech/api/lists
@@ -51,7 +56,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.15.3
       Authorization:
-      - Token token="fa44c931-4c4d-42f0-8237-87286ca0ac72"
+      - Token token="b843fac3-7947-45c1-b978-f9b670407504"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -62,33 +67,30 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 17 Oct 2018 12:32:17 GMT
-      Connection:
-      - keep-alive
+      - Thu, 18 Oct 2018 00:53:21 GMT
       Content-Type:
       - application/json;charset=utf-8
-      Content-Length:
-      - '1798'
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=deb352e03f57d465e9a0819b3218d8daa1539824001; expires=Fri, 18-Oct-19
+        00:53:21 GMT; path=/; domain=.teachable.tech; HttpOnly
       X-Content-Type-Options:
       - nosniff
+      X-Request-Id:
+      - 909FE2CE4A524287B8B5071798492D2F
       Server:
-      - thin
-      Via:
-      - 1.1 vegur
+      - cloudflare
+      Cf-Ray:
+      - 46b7070976f49206-EWR
     body:
-      encoding: UTF-8
-      string: '{"lists":[{"name":"My new List","src":"http://todoable.teachable.tech/api/lists/7ad41da8-1e81-4636-ae7f-5f2905974c31","id":"7ad41da8-1e81-4636-ae7f-5f2905974c31"},{"name":"Todo
-        5","src":"http://todoable.teachable.tech/api/lists/084a6c73-be6b-4137-a762-43928a07e242","id":"084a6c73-be6b-4137-a762-43928a07e242"},{"name":"Todo
-        1","src":"http://todoable.teachable.tech/api/lists/e0809de1-b00e-49fc-88ef-7e30e5b93551","id":"e0809de1-b00e-49fc-88ef-7e30e5b93551"},{"name":"Todo
-        2","src":"http://todoable.teachable.tech/api/lists/24e888b9-322c-4791-8cb2-92cbefa83f14","id":"24e888b9-322c-4791-8cb2-92cbefa83f14"},{"name":"Todo
-        3","src":"http://todoable.teachable.tech/api/lists/58878311-d1cc-404e-9144-170252508b3c","id":"58878311-d1cc-404e-9144-170252508b3c"},{"name":"List
-        1","src":"http://todoable.teachable.tech/api/lists/2ba37be0-5fea-4316-8a92-b216597e85e4","id":"2ba37be0-5fea-4316-8a92-b216597e85e4"},{"name":"Todo
-        4","src":"http://todoable.teachable.tech/api/lists/e783b8c8-cba7-4bb5-ae86-e8ecf5bb797d","id":"e783b8c8-cba7-4bb5-ae86-e8ecf5bb797d"},{"name":"List
-        2","src":"http://todoable.teachable.tech/api/lists/f0c4c42b-dd83-4ccf-bc2e-5113602c14d1","id":"f0c4c42b-dd83-4ccf-bc2e-5113602c14d1"},{"name":"List
-        3","src":"http://todoable.teachable.tech/api/lists/7fe73cf7-d53e-44fe-ab8f-fa555a01eaf7","id":"7fe73cf7-d53e-44fe-ab8f-fa555a01eaf7"},{"name":"List
-        4","src":"http://todoable.teachable.tech/api/lists/bb69da6d-7299-47e9-9193-1fcbe6d90a3b","id":"bb69da6d-7299-47e9-9193-1fcbe6d90a3b"},{"name":"List
-        5","src":"http://todoable.teachable.tech/api/lists/cf6eae9e-8ac8-40a0-bd02-36cfd455ee42","id":"cf6eae9e-8ac8-40a0-bd02-36cfd455ee42"},{"name":"Testing
-        List","src":"http://todoable.teachable.tech/api/lists/1bf385e6-2ad8-403f-86c0-0a5365752336","id":"1bf385e6-2ad8-403f-86c0-0a5365752336"}]}'
+      encoding: ASCII-8BIT
+      string: '{"lists":[{"name":"List 1","src":"http://todoable.teachable.tech/api/lists/e1c705e5-a2ac-4595-8101-ed1d6ac46b60","id":"e1c705e5-a2ac-4595-8101-ed1d6ac46b60"},{"name":"Another
+        list for testing","src":"http://todoable.teachable.tech/api/lists/ec4dc707-2898-40b7-a2dc-10c3b9923bf7","id":"ec4dc707-2898-40b7-a2dc-10c3b9923bf7"},{"name":"Testing
+        List","src":"http://todoable.teachable.tech/api/lists/79fc481b-e723-4e52-a6b0-4e71957ac3e3","id":"79fc481b-e723-4e52-a6b0-4e71957ac3e3"},{"name":"list
+        for todoable","src":"http://todoable.teachable.tech/api/lists/939329a1-7320-4f26-9fe2-9ad1854a9493","id":"939329a1-7320-4f26-9fe2-9ad1854a9493"}]}'
     http_version: 
-  recorded_at: Wed, 17 Oct 2018 12:32:16 GMT
+  recorded_at: Thu, 18 Oct 2018 00:53:20 GMT
 recorded_with: VCR 4.0.0

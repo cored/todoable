@@ -23,28 +23,33 @@ http_interactions:
       message: Unauthorized
     headers:
       Date:
-      - Wed, 17 Oct 2018 13:35:23 GMT
-      Connection:
-      - keep-alive
+      - Thu, 18 Oct 2018 00:53:20 GMT
       Content-Type:
       - text/html;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d67579996855066d00ce7370bfc7c7d811539824000; expires=Fri, 18-Oct-19
+        00:53:20 GMT; path=/; domain=.teachable.tech; HttpOnly
       Www-Authenticate:
       - Basic realm="Restricted Area"
-      Content-Length:
-      - '0'
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
+      X-Request-Id:
+      - 51B9A654C49E4AD380526E92323ABC84
       Server:
-      - thin
-      Via:
-      - 1.1 vegur
+      - cloudflare
+      Cf-Ray:
+      - 46b70702a32b920c-EWR
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Wed, 17 Oct 2018 13:35:23 GMT
+  recorded_at: Thu, 18 Oct 2018 00:53:19 GMT
 recorded_with: VCR 4.0.0
