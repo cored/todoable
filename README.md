@@ -71,6 +71,24 @@ Todoable.create_list!(name: "my_new_list")
       src="http://todoable.teachable.tech/api/lists/1e87973c-61b3-42ce-8e2c-e3021b1d4500">
 ```
 
+### Update a list
+
+```ruby
+list = client.create_list!(name: "My new list for update")
+=> #<Todoable::Resources::List
+    name="My new list for update"
+    id="71b21943-acea-4512-be7f-9770546783e2"
+    src="http://todoable.teachable.tech/api/lists/71b21943-acea-4512-be7f-9770546783e2"
+    items=[]>
+
+client.update_list!(id: list.id, name: "Updating my list")
+=> #<Todoable::Resources::List
+    name="Updating my list"
+    id="71b21943-acea-4512-be7f-9770546783e2"
+    src="http://todoable.teachable.tech/api/lists/71b21943-acea-4512-be7f-9770546783e2"
+    items=[]>
+```
+
 ### Delete a list
 
 ```ruby
