@@ -133,6 +133,26 @@ client.mark_item_finished!(list_id: list.id, id: "b1568832-21f6-4900-a1ce-b3106c
       finished_at=#<Date: 2018-10-18 ((2458410j,0s,0n),+0s,2299161j)>>
 ```
 
+### Delete an item from a list
+
+```ruby
+list = client.lists.first
+=> #<Todoable::Resources::List
+      name="List 1"
+      id="9718d581-4b06-4db8-adae-ae8db28dc1da"
+      src="http://todoable.teachable.tech/api/lists/9718d581-4b06-4db8-adae-ae8db28dc1da"
+      items=[]>
+item = client.create_item!(list_id: list.id, name: "Delete me Please!")
+=> #<Todoable::Resources::Item
+      name="Delete me Please!"
+      id="7012cc3c-ea5e-437c-aaac-9f33ea0ad7b2"
+      src="http://todoable.teachable.tech/api/lists/9718d581-4b06-4db8-adae-ae8db28dc1da/items/7012cc3c-ea5e-437c-aaac-9f33ea0ad7b2"
+      list_id="9718d581-4b06-4db8-adae-ae8db28dc1da"
+      finished_at=nil>
+client.delete_item!(list_id: list.id, id: item.id).list(id: list.id).items.include?(item)
+=> false
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
