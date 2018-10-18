@@ -125,7 +125,8 @@ RSpec.describe Todoable::Client do
       Todoable::Resources::Item.new({
         "name" => "Feed the cat",
         "src" => "/path/list",
-        "id" => "uuid"
+        "id" => "uuid",
+        "list_id" => "list_id"
       })
     end
 
