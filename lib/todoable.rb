@@ -9,8 +9,8 @@ module Todoable
 
   def self.authenticate!(username: ENV["TODOABLE_USERNAME"], password: ENV["TODOABLE_PASSWORD"])
     Client.new(
-      http_adapter: Adapters::HTTP.with_credentials(username: username,
-                                                    password: password)
+      adapter: Adapters::HTTP.with_credentials(username: username,
+                                               password: password)
     )
   end
 end
