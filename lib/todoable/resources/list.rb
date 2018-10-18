@@ -13,9 +13,13 @@ module Todoable
       end
 
       def with(attrs)
-        self.new(to_h.merge(attrs).merge(
-            items: Array(attrs["items"]).map do |item_attrs|
-              Item.for(item_attrs.merge(list_id: id))
+        self.new(
+          to_h.merge(
+            id: attrs["id"],
+            src: attrs["src"],
+            name: attrs["name"]
+          ).merge(items: Array(attrs["items"]).map do |item_attrs|
+              Item.for({"item" => item_attrs.merge("list_id" => id)})
             end)
         )
       end

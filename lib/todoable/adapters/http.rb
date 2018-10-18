@@ -7,17 +7,18 @@ module Todoable
       class InvalidCredentialsError < StandardError; end
       class UnprocessableEntityError < StandardError; end
       class NotFoundError < StandardError; end
-      class UnauthorizedError < StandardError; end
 
       HTTP_OK_CODE = 200
       HTTP_CREATED_CODE = 201
       HTTP_NO_CONTENT_CODE = 204
+      HTTP_NOT_FOUND_CODE = 404
       HTTP_UNAUTHORIZED_CODE = 401
       HTTP_UNPROCCESSABLE_ENTITY_CODE = 422
 
       ERRORS = {
         HTTP_UNAUTHORIZED_CODE => InvalidCredentialsError.new("Please verify your username or password"),
         HTTP_UNPROCCESSABLE_ENTITY_CODE => UnprocessableEntityError.new("Unprocessable entity"),
+        HTTP_NOT_FOUND_CODE => NotFoundError.new("Resource does not exist")
       }
 
       def self.with_credentials(username:, password:, http_client: Faraday)
@@ -100,7 +101,6 @@ module Todoable
       def request(http_method:, url:, params: {})
         @response = connection.public_send(http_method, url, params)
         return response.body if successful_response?
-
         raise ERRORS.fetch(response.status)
       rescue Faraday::ParsingError
         return build_response_after_mutation(params) if response_created_ok?
