@@ -109,6 +109,30 @@ client.create_item!(list_id: list.id, name: "My new item")
       finished_at=nil>
 ```
 
+### Mark an item as finished
+
+```ruby
+list = client.lists.first
+=> #<Todoable::Resources::List
+      name="List 1"
+      id="9718d581-4b06-4db8-adae-ae8db28dc1da"
+      src="http://todoable.teachable.tech/api/lists/9718d581-4b06-4db8-adae-ae8db28dc1da"
+      items=[]>
+client.create_item!(list_id: list.id, name: "Item to mark as finished")
+=> #<Todoable::Resources::Item
+      name="Item to mark as finished"
+      id="b1568832-21f6-4900-a1ce-b3106c763872"
+      src="http://todoable.teachable.tech/api/lists/9718d581-4b06-4db8-adae-ae8db28dc1da/items/b1568832-21f6-4900-a1ce-b3106c763872"
+      list_id="9718d581-4b06-4db8-adae-ae8db28dc1da" finished_at=nil>
+client.mark_item_finished!(list_id: list.id, id: "b1568832-21f6-4900-a1ce-b3106c763872")
+=> #<Todoable::Resources::Item
+      name="Item to mark as finished"
+      id="b1568832-21f6-4900-a1ce-b3106c763872"
+      src="http://todoable.teachable.tech/api/lists/9718d581-4b06-4db8-adae-ae8db28dc1da/items/b1568832-21f6-4900-a1ce-b3106c763872"
+      list_id="9718d581-4b06-4db8-adae-ae8db28dc1da"
+      finished_at=#<Date: 2018-10-18 ((2458410j,0s,0n),+0s,2299161j)>>
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
