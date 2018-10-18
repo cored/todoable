@@ -32,10 +32,10 @@ module Todoable
     end
 
     def create_item!(list_id:, name:)
-      item = Resources::Item.new(name: name)
+      item = Resources::Item.new(name: name, list_id: list_id)
       item.with(
         http_adapter.post(
-          url: Resources::Item.resource_url(list_id: list_id),
+          url: item.url,
           params: item.to_json
         )
       )
