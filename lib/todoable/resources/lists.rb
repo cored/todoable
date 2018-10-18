@@ -1,11 +1,9 @@
 module Todoable
   module Resources
-
-
     class Lists < Dry::Struct
       include Enumerable
 
-      def self.resource_url
+      def self.url
         "/api/lists"
       end
 
